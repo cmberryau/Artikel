@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DerDieDasWordModel.h"
 
-@interface EnterWordViewController : UIViewController <UITextFieldDelegate>
+@interface DerDieDasEnterWordViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField * wordField;
 @property (weak, nonatomic) IBOutlet UITableView * wordTable;
 @property (strong, nonatomic) DerDieDasWordModel * model;

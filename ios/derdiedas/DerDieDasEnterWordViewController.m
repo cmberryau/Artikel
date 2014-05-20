@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Christopher Berry. All rights reserved.
 //
 
-#import "EnterWordViewController.h"
+#import "DerDieDasEnterWordViewController.h"
 #import "DerDieDasWordModel.h"
 #import "DerDieDasAnimationController.h"
 #import "DerDieDasTableViewController.h"
 
-@interface EnterWordViewController ()
+@interface DerDieDasEnterWordViewController ()
 
 @end
 
-@implementation EnterWordViewController
+@implementation DerDieDasEnterWordViewController
 
 DerDieDasTableViewController * wordTableController = nil;
 

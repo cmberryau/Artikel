@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		872CFAE218EF0701000BF034 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872CFAE118EF0701000BF034 /* CoreData.framework */; };
-		8739C67B18D8DDFE002D3463 /* EnterWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67A18D8DDFE002D3463 /* EnterWordViewController.m */; };
+		8739C67B18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */; };
 		8739C68018DA3257002D3463 /* DerDieDasWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67F18DA3257002D3463 /* DerDieDasWordModel.m */; };
 		8739C68318DA32F5002D3463 /* DerDieDasWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C68218DA32F5002D3463 /* DerDieDasWord.m */; };
 		876403A018D4AE040034A445 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8764039F18D4AE040034A445 /* Foundation.framework */; };
@@ -43,8 +43,8 @@
 /* Begin PBXFileReference section */
 		87216955191F7E1800E74829 /* DerDieDas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DerDieDas.xcdatamodel; sourceTree = "<group>"; };
 		872CFAE118EF0701000BF034 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		8739C67918D8DDFE002D3463 /* EnterWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWordViewController.h; sourceTree = "<group>"; };
-		8739C67A18D8DDFE002D3463 /* EnterWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWordViewController.m; sourceTree = "<group>"; };
+		8739C67918D8DDFE002D3463 /* DerDieDasEnterWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasEnterWordViewController.h; sourceTree = "<group>"; };
+		8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasEnterWordViewController.m; sourceTree = "<group>"; };
 		8739C67E18DA3257002D3463 /* DerDieDasWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasWordModel.h; sourceTree = "<group>"; };
 		8739C67F18DA3257002D3463 /* DerDieDasWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasWordModel.m; sourceTree = "<group>"; };
 		8739C68118DA32F5002D3463 /* DerDieDasWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasWord.h; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 				87C5C31718EE034A005FC288 /* DerDieDas.xcdatamodeld */,
 				8787BB5818E87938004E8C7D /* DerDieDasTableViewController.h */,
 				8787BB5918E87938004E8C7D /* DerDieDasTableViewController.m */,
-				8739C67918D8DDFE002D3463 /* EnterWordViewController.h */,
-				8739C67A18D8DDFE002D3463 /* EnterWordViewController.m */,
+				8739C67918D8DDFE002D3463 /* DerDieDasEnterWordViewController.h */,
+				8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				8739C68318DA32F5002D3463 /* DerDieDasWord.m in Sources */,
 				876403B018D4AE040034A445 /* DerDieDasAppDelegate.m in Sources */,
 				87D7E75118E63C5200A85B11 /* DerDieDasAnimationController.m in Sources */,
-				8739C67B18D8DDFE002D3463 /* EnterWordViewController.m in Sources */,
+				8739C67B18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m in Sources */,
 				8787BB5A18E87938004E8C7D /* DerDieDasTableViewController.m in Sources */,
 				87BE41A3191C142A00D475EA /* DerDieDas.xcdatamodeld in Sources */,
 				876403D218D4FCAB0034A445 /* DerDieDasMainViewController.m in Sources */,

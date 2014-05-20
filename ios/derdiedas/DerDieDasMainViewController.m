@@ -8,7 +8,7 @@
 
 #import "DerDieDasMainViewController.h"
 #import "DerDieDasAnimationController.h"
-#import "EnterWordViewController.h"
+#import "DerDieDasEnterWordViewController.h"
 
 @interface DerDieDasMainViewController ()
 
@@ -139,7 +139,7 @@ static volatile bool _ready_to_answer;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    EnterWordViewController * view = (EnterWordViewController *)[segue destinationViewController];
+    DerDieDasEnterWordViewController * view = (DerDieDasEnterWordViewController *)[segue destinationViewController];
     [view setModel:self.model];
 }
     
