@@ -15,3 +15,11 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+
+### Django ###
+*.log
+*.pot
+*.pyc
+local_settings.py
+wsgi.py
+manage.py
