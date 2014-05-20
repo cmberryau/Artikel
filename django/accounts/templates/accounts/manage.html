@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="https://{{ site.domain|cut:":8000" }}/favicon.ico">
+
+        <title>{{ site.name }} {% if title %}{{ title }}{% endif %}</title>
+
+        <link href="https://{{ site.domain|cut:":8000" }}/css/bootstrap.css" rel="stylesheet">
+        <link href="https://{{ site.domain|cut:":8000" }}/static/account.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="control-group text-center">
+            <form class="form-signin" method="post" action="{% url 'accounts:manage' %}">
+                {% csrf_token %}
+                {% load widget_tweaks %}
+                {% if form.non_field_errors %}
+                <p class="text-center">{{ form.non_field_errors.as_text|cut:"* " }}</p>
+                {% endif %}
+                <h4 class="text-center">{{ user.email }}</h4>
+                {% if form.first_name.errors or form.last_name.errors %}
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {% if form.first_name.errors %}
+                    <p>First name: {{ form.first_name.errors.as_text|cut:"* " }}</p>
+                    {% endif %}
+                    {% if form.last_name.errors %}
+                    <p>Last name: {{ form.last_name.errors.as_text|cut:"* " }}</p>
+                    {% endif %}
+                </div>
+                <div class="control-group has-error">
+                {% endif %}
+                    {% if user.first_name %}
+                    {% render_field form.first_name class="form-control top" Placeholder=user.first_name %}
+                    {% else %}
+                    {% render_field form.first_name class="form-control top" Placeholder="First Name" %}
+                    {% endif %}
+                {% if form.first_name.errors %}
+                </div>
+                {% endif %}
+                {% if form.last_name.errors %}
+                <div class="control-group has-error">
+                    {% endif %}
+                    {% if user.last_name %}
+                    {% render_field form.last_name class="form-control bottom" Placeholder=user.last_name %}
+                    {% else %}
+                    {% render_field form.last_name class="form-control bottom" Placeholder="Last Name" %}
+                    {% endif %}
+                    {% if form.last_name.errors %}
+                </div>
+                {% endif %}
+                {% if form.new_password2.errors %}
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <p>{{ form.new_password2.errors.as_text|cut:"* " }}</p>
+                </div>
+                <div class="control-group has-error">
+                    {% endif %}
+                    {% render_field form.new_password1 class="form-control top" Placeholder="Password" %}
+                    {% render_field form.new_password2 class="form-control bottom" Placeholder="Confirm password" %}
+                    {% if form.new_password1.errors or form.new_password2.errors %}
+                </div>
+                {% endif %}
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Update account</button>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://{{ site.domain|cut:":8000" }}/js/bootstrap.js"></script>
+    </body>
+</html>

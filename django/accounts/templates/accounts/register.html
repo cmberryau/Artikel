@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="https://{{ site.domain|cut:":8000" }}/favicon.ico">
+
+        <title>{{ site.name }} {% if title %}{{ title }}{% endif %}</title>
+
+        <link href="https://{{ site.domain|cut:":8000" }}/css/bootstrap.css" rel="stylesheet">
+        <link href="https://{{ site.domain|cut:":8000" }}/static/account.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="control-group text-center">
+            <form class="form-signin" method="post" action="/register/">
+                {% csrf_token %}
+                {% load widget_tweaks %}
+                {% if form.non_field_errors %}
+                <p class="text-center">{{ form.non_field_errors.as_text|cut:"* " }}</p>
+                {% endif %}
+                {% if form.email.errors %}
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {% if form.email.errors %}
+                    <p>{{ form.email.label }}: {{ form.email.errors.as_text|cut:"* " }}</p>
+                    {% endif %}
+                </div>
+                <div class="control-group has-error">
+                {% endif %}
+                    {% render_field form.email class="form-control solo" Placeholder="Email address" required="True" autofocus="True" %}
+                {% if form.email.errors %}
+                </div>
+                {% endif %}
+
+                {% if form.password2.errors %}
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {% if form.password2.errors %}
+                    <p>{{ form.password2.errors.as_text|cut:"* " }}</p>
+                    {% endif %}
+                </div>
+                <div class="control-group has-error">
+                {% endif %}
+                    {% render_field form.password1 class="form-control top" Placeholder="Password" required="True" %}
+                    {% render_field form.password2 class="form-control bottom" Placeholder="Confirm password" required="True" %}
+                {% if form.password2.errors %}
+                </div>
+                {% endif %}
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Register</button>
+                <p class="text-center">Already have an account? Sign in <a href={% url 'accounts:signin' %}>here.</a></p>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://{{ site.domain|cut:":8000" }}/js/bootstrap.js"></script>
+    </body>
+</html>
