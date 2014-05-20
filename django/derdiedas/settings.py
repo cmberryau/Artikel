@@ -9,12 +9,13 @@ from secretkey import SECRET_KEY
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-#EMAIL_HOST = 'mail.somehost.com'
-#EMAIL_HOST_PASSWORD = 'areallygoodpassword'
-#EMAIL_HOST_USER = 'someone@somehost.com'
-#EMAIL_PORT = 587
-#EMAIL_USE_TLS = True
-#SERVER_EMAIL = EMAIL_HOST_USER
+# Needs to be edited before use!
+EMAIL_HOST = 'mail.somehost.com'
+EMAIL_HOST_PASSWORD = 'areallygoodpassword'
+EMAIL_HOST_USER = 'someone@somehost.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+SERVER_EMAIL = EMAIL_HOST_USER
 
 ADMINS = (
     ('John Smith', 'johnsmith@somehost.com'),
@@ -52,6 +53,7 @@ WSGI_APPLICATION = 'wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+# Needs to be edited before use!
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
