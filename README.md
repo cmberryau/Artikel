@@ -12,5 +12,6 @@ The iOS app allows users to enter words, and then test themselves. It has an
 extremely basic and buggy system of picking the next word.
 
 The Django app allows users to register using e-mail addresses rather than
-usernames like vanilla Django. The actual articles application is again
-extremely basic.
+usernames like vanilla Django. Users can (once their account is active) enter
+Words in a similar fashion to the iOS app and test themselves the articles
+application is again extremely basic.
