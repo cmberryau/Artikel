@@ -20,7 +20,7 @@
 @synthesize managedObjectContext;
 
 // Inits a word with a complete string
-+(DerDieDasWord *) initWithString:(NSString*) string context:(NSManagedObjectContext *)context
++(DerDieDasWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context
 {
     if(string == nil)
         return nil;
@@ -59,7 +59,7 @@
 }
 
 // Inits a word with a seperate article and character string
-+(DerDieDasWord *) initWithArticleAndCharacters:(NSString*) article characters:(NSString *) characters context:(NSManagedObjectContext *)context
++(DerDieDasWord *) wordWithArticleAndCharacters:(NSString*) article characters:(NSString *) characters context:(NSManagedObjectContext *)context
 {
     if(article == nil || characters == nil)
         return nil;

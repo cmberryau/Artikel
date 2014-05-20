@@ -76,6 +76,7 @@
     [self addWord:@"die Tür"];
 }
 
+// Returns true if the word already exists in the model
 -(BOOL) contains:(NSString *) whole_word
 {
     if(whole_word == nil)
@@ -110,6 +111,7 @@
     return false;
 }
 
+// Returns true if the word already exists in the model
 -(BOOL) contains:(NSString *) article characters:(NSString *)characters
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
@@ -135,7 +137,7 @@
 // Adds a word to the model and returns the newly created object
 -(DerDieDasWord *) addWord:(NSString *) whole_word
 {
-    DerDieDasWord * word = [DerDieDasWord initWithString:whole_word context:_managedObjectContext];
+    DerDieDasWord * word = [DerDieDasWord wordWithString:whole_word context:_managedObjectContext];
 
     return word;
 }
@@ -143,7 +145,7 @@
 // Adds a word to the model and returns the newly created object
 -(DerDieDasWord *) addWord:(NSString *) article characters:(NSString *)characters
 {
-    DerDieDasWord * word = [DerDieDasWord initWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
+    DerDieDasWord * word = [DerDieDasWord wordWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
     
     return word;
 }

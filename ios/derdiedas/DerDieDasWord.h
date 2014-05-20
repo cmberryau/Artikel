@@ -20,10 +20,10 @@
 @property (strong, nonatomic) NSManagedObjectContext * managedObjectContext;
 
 // Inits a word with a complete string
-+(DerDieDasWord *) initWithString:(NSString*) string context:(NSManagedObjectContext *)context;
++(DerDieDasWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context;
 
 // Inits a word with a seperate article and character string
-+(DerDieDasWord *) initWithArticleAndCharacters:(NSString*) article
++(DerDieDasWord *) wordWithArticleAndCharacters:(NSString*) article
                                      characters:(NSString *)characters
                                      context:(NSManagedObjectContext *)context;
 
