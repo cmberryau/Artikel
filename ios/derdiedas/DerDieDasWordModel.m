@@ -22,6 +22,7 @@
 
 @implementation DerDieDasWordModel
 
+
 -(DerDieDasWordModel *) initWithManagedObjectContext:(NSManagedObjectContext *) context
 {
     if(context == nil)
