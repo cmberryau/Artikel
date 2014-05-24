@@ -203,10 +203,32 @@
     [_managedObjectContext save:&error];
 }
 
-// Returns the next word, based on it's priority
+// Returns the next word
 -(DerDieDasWord *) next
 {
-    DerDieDasWord * match = [self fetcNextWordNoisy];
+    DerDieDasWord * match = nil;
+    
+    // try a first pass with a time limit, and if that does not work, try
+    // without the time limit
+    for(int i=0; match == nil; i++)
+    {
+        int random_number = arc4random_uniform(11);
+        
+        if(random_number < 4)
+        {
+            match = [self fetchRecentlyAddedWord];
+            
+            if(match == nil)
+            {
+                match = [self fetchRarelyAttemptedWord: (i < 1)];
+            }
+        }
+        
+        if(match == nil)
+        {
+            match = [self fetchDifficultWord:  (i < 1)];
+        }
+    }
     
     if(match == nil)
     {
@@ -214,32 +236,6 @@
     }
     
     _currentWord = match;
-    
-    return match;
-}
-
-// fetches a word with some random elements added
--(DerDieDasWord *) fetcNextWordNoisy
-{
-    int random_number = arc4random_uniform(11);
-    
-    DerDieDasWord * match;
-    
-    if(random_number < 4)
-    {
-        match = [self fetchRecentlyAddedWord];
-        
-        if(match != nil)
-        {
-            return match;
-        }
-        
-        match = [self fetchRarelyAttemptedWord];
-    }
-    else
-    {
-        match = [self fetchDifficultWord];
-    }
     
     return match;
 }
@@ -254,13 +250,16 @@
     // words that have not been attempted yet, or have no last attempted date
     NSPredicate * search_predicate = [NSPredicate predicateWithFormat:@"(times_attempted = 0) OR (last_attempt = NULL)", [NSDate dateWithTimeIntervalSinceNow:-10]];
     [fetch_request setPredicate:search_predicate];
+
+    // only fetch 3, we'll take one of them
+    [fetch_request setFetchLimit:3];
     
     NSError * error;
     NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
     
     if([objects count] > 0)
     {
-        DerDieDasWord * match = objects[0];
+        DerDieDasWord * match = objects[arc4random_uniform((unsigned int)[objects count])];
         return match;
     }
     
@@ -268,20 +267,27 @@
 }
 
 // fetches a word with a high fail rate
--(DerDieDasWord *) fetchDifficultWord
+-(DerDieDasWord *) fetchDifficultWord:(BOOL) with_time_limit
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
     [fetch_request setEntity:entity_description];
 
-    // 5 minute gaps between attempts (includes app downtime)
-    NSPredicate * search_predicate = [NSPredicate predicateWithFormat:@"(last_attempt < %@)", [NSDate dateWithTimeIntervalSinceNow:-60 * 5]];
-    [fetch_request setPredicate:search_predicate];
+    
+    if(with_time_limit)
+    {
+        // 5 minute gaps between attempts (includes app downtime)
+        NSPredicate * search_predicate = [NSPredicate predicateWithFormat:@"(last_attempt < %@)", [NSDate dateWithTimeIntervalSinceNow:-60 * 5]];
+        [fetch_request setPredicate:search_predicate];
+    }
     
     // Sort based on their failure rate in a descending order
     NSSortDescriptor * sort_descriptor = [[NSSortDescriptor alloc] initWithKey:@"fail_rate" ascending:NO];
     NSArray * sort_descriptors_array = @[sort_descriptor];
     [fetch_request setSortDescriptors:sort_descriptors_array];
+    
+    // only fetch 3, we'll take one of them
+    [fetch_request setFetchLimit:3];
     
     NSError * error;
     NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
@@ -290,16 +296,7 @@
     
     if([objects count] > 0)
     {
-        match = objects[0];
-        return match;
-    }
-    
-    [fetch_request setPredicate:NULL];
-    objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
-    
-    if([objects count] > 0)
-    {
-        match = objects[0];
+        match = objects[arc4random_uniform((unsigned int)[objects count])];
         return match;
     }
     
@@ -307,20 +304,26 @@
 }
 
 // fetches a word that the user has not attempted often
--(DerDieDasWord *) fetchRarelyAttemptedWord
+-(DerDieDasWord *) fetchRarelyAttemptedWord:(BOOL) with_time_limit
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
     [fetch_request setEntity:entity_description];
     
-    // 5 minute gaps between attempts (includes app downtime)
-    NSPredicate * search_predicate = [NSPredicate predicateWithFormat:@"(last_attempt < %@)", [NSDate dateWithTimeIntervalSinceNow:-60 * 5]];
-    [fetch_request setPredicate:search_predicate];
+    if(with_time_limit)
+    {
+        // 5 minute gaps between attempts (includes app downtime)
+        NSPredicate * search_predicate = [NSPredicate predicateWithFormat:@"(last_attempt < %@)", [NSDate dateWithTimeIntervalSinceNow:-60 * 5]];
+        [fetch_request setPredicate:search_predicate];
+    }
     
     // Sort words based on how many attempts in a ascending order
     NSSortDescriptor * sort_descriptor = [[NSSortDescriptor alloc] initWithKey:@"times_attempted" ascending:YES];
     NSArray * sort_descriptors_array = @[sort_descriptor];
     [fetch_request setSortDescriptors:sort_descriptors_array];
+    
+    // only fetch 3, we'll take one of them
+    [fetch_request setFetchLimit:3];
     
     NSError * error;
     NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
@@ -329,16 +332,7 @@
     
     if([objects count] > 0)
     {
-        match = objects[0];
-        return match;
-    }
-    
-    [fetch_request setPredicate:NULL];
-    objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
-    
-    if([objects count] > 0)
-    {
-        match = objects[0];
+        match = objects[arc4random_uniform((unsigned int)[objects count])];
         return match;
     }
     
@@ -354,23 +348,6 @@
     }
     
     return _currentWord;
-}
-
-// Returns the word at the index
--(DerDieDasWord *)atIndex:(NSInteger)index
-{
-    NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
-    
-    [fetch_request setEntity:entity_description];
-    
-    NSError * error;
-    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
-    DerDieDasWord * match = nil;
-    
-    match = objects[index];
-    
-    return match;
 }
 
 // Returns the number of words

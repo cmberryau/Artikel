@@ -51,23 +51,17 @@
 // Returns the next word
 -(DerDieDasWord *) next;
 
-// fetches a word with some random elements added
--(DerDieDasWord *) fetcNextWordNoisy;
-
 // fetches a recently added word from the store
 -(DerDieDasWord *) fetchRecentlyAddedWord;
 
 // fetches a word with a high fail rate
--(DerDieDasWord *) fetchDifficultWord;
+-(DerDieDasWord *) fetchDifficultWord:(BOOL) with_time_limit;
 
 // fetches a word that the user has not attempted often
--(DerDieDasWord *) fetchRarelyAttemptedWord;
+-(DerDieDasWord *) fetchRarelyAttemptedWord:(BOOL) with_time_limit;
 
 // Returns the current word
 -(DerDieDasWord *) current;
-
-// Returns the word at the index
--(DerDieDasWord *) atIndex:(NSInteger)index;
 
 // Returns the number of words
 -(NSUInteger) count;
