@@ -21,7 +21,7 @@
 #import <UIKit/UIKit.h>
 #import "DerDieDasWordModel.h"
 
-@interface DerDieDasTableViewController : UITableViewController
+@interface DerDieDasTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) DerDieDasWordModel * model;
 
