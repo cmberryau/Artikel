@@ -46,17 +46,22 @@ DerDieDasTableViewController * wordTableController = nil;
 {
     [super viewDidLoad];
     
+    if(wordTableController == nil)
+    {
+        wordTableController = [[DerDieDasTableViewController alloc] init];
+    }
+    
     self.wordField.delegate = self;
     [self.wordField becomeFirstResponder];
     [self.wordField setPlaceholder:@"e.g die Katze"];
-    
-    wordTableController = [[DerDieDasTableViewController alloc] init];
+
     [wordTableController setModel:self.model];
+    [[self.model fetchedResultsController] setDelegate:wordTableController];
     wordTableController.tableView = self.wordTable;
     [self.wordTable setDelegate:wordTableController];
     [self.wordTable setDataSource:wordTableController];
     
-    //self.navigationItem.rightBarButtonItem = wordTableController.editButtonItem;
+    self.navigationItem.rightBarButtonItem = wordTableController.editButtonItem;
     
     [wordTableController realignTableView];
 }
