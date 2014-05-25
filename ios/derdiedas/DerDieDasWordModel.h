@@ -34,6 +34,9 @@
 -(void) addDefaultWords;
 
 // Returns true if the word already exists in the model
+-(BOOL) containsWordObject:(DerDieDasWord *)word;
+
+// Returns true if the word already exists in the model
 -(BOOL) contains:(NSString *) whole_word;
 
 // Returns true if the word already exists in the model

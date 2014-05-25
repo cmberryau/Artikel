@@ -89,10 +89,23 @@
 }
 
 // Returns true if the word already exists in the model
+-(BOOL) containsWordObject:(DerDieDasWord *)word
+{
+    if(word == nil)
+    {
+        return false;
+    }
+    
+    return [self contains:word.article characters:word.characters];
+}
+
+// Returns true if the word already exists in the model
 -(BOOL) contains:(NSString *) whole_word
 {
     if(whole_word == nil)
+    {
         return false;
+    }
     
     NSString * trimmed_word = [whole_word stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSArray * strings = [trimmed_word componentsSeparatedByString:@" "];
@@ -103,29 +116,17 @@
     NSString * article = [strings[0] lowercaseString];
     NSString * characters = [strings[1] capitalizedString];
     
-    NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
-    
-    [fetch_request setEntity:entity_description];
-    
-    NSPredicate * search_predicate = [NSPredicate predicateWithFormat:@"article == %@ AND characters == %@", article, characters];
-    
-    [fetch_request setPredicate:search_predicate];
-    
-    NSError * error;
-    NSUInteger count = [_managedObjectContext countForFetchRequest:fetch_request error:&error];
-    
-    if(count > 0)
-    {
-        return true;
-    }
-    
-    return false;
+    return [self contains:article characters:characters];
 }
 
 // Returns true if the word already exists in the model
 -(BOOL) contains:(NSString *) article characters:(NSString *)characters
 {
+    if(article == nil || characters == nil)
+    {
+        return false;
+    }
+    
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
     
@@ -342,7 +343,14 @@
 // Returns the current word
 -(DerDieDasWord *) current
 {
-    if(_currentWord == nil)
+    // incase words have been removed
+    if([self count] <= 0){
+        [self addDefaultWords];
+        
+        _currentWord = nil;
+    }
+    
+    if(_currentWord == nil || ![self containsWordObject:_currentWord])
     {
         _currentWord = [self next];
     }
