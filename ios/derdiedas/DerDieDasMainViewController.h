@@ -30,6 +30,7 @@
 
 // called after the delay from selecting the correct word has expired
 - (void)wordChangeDelayExpired;
+
 // sets the article's label field font size
 - (void)setArticleSelectorFontSize:(int)size;
 

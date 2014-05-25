@@ -50,7 +50,10 @@ static volatile bool _ready_to_answer;
     
     _label_movement_offset = (self.articleLabel.bounds.size.width/2);
     _ready_to_answer = true;
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [self.wordLabel setText:[[self.model current] characters]];
 }
 
