@@ -90,14 +90,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z46-hn-zLA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z46-hn-zLA">
                                 <rect key="frame" x="5" y="319" width="267" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-50-lAo">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-50-lAo">
                                 <rect key="frame" x="272" y="319" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -108,10 +108,13 @@
                                     <action selector="wordAddTouchedUp:" destination="k57-Gs-iAJ" eventType="touchUpInside" id="Y5t-WY-NXa"/>
                                 </connections>
                             </button>
-                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-5l-fdl">
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-5l-fdl">
                                 <rect key="frame" x="0.0" y="66" width="320" height="251"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="jzy-ek-Thp"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WordPrototypeCell" textLabel="7eS-Lb-ZOM" style="IBUITableViewCellStyleDefault" id="mdo-lk-pW3">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -137,7 +140,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ng4-5l-fdl" firstAttribute="width" secondItem="CU4-ae-DSE" secondAttribute="width" id="5P1-Ba-NPP"/>
+                            <constraint firstAttribute="trailing" secondItem="Aq9-50-lAo" secondAttribute="trailing" constant="2" id="BnF-Iv-x8x"/>
+                            <constraint firstItem="z46-hn-zLA" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="2" id="CGa-JV-e04"/>
+                            <constraint firstItem="z46-hn-zLA" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="2" id="EeJ-cZ-6p3"/>
+                            <constraint firstItem="Aq9-50-lAo" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="2" id="GRV-HF-SII"/>
+                            <constraint firstItem="z46-hn-zLA" firstAttribute="leading" secondItem="CU4-ae-DSE" secondAttribute="leading" constant="5" id="TJR-8z-4Qd"/>
+                            <constraint firstItem="Aq9-50-lAo" firstAttribute="leading" secondItem="z46-hn-zLA" secondAttribute="trailing" id="g29-Zs-dUS"/>
                             <constraint firstAttribute="centerX" secondItem="ng4-5l-fdl" secondAttribute="centerX" id="ih0-xK-Xlk"/>
+                            <constraint firstItem="ng4-5l-fdl" firstAttribute="top" secondItem="qAm-If-8Ml" secondAttribute="bottom" constant="2" id="opF-Qc-NFJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jiv-GR-gfW"/>
