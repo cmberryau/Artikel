@@ -105,7 +105,6 @@
 				876403D018D4FCAB0034A445 /* DerDieDasMainViewController.h */,
 				876403D118D4FCAB0034A445 /* DerDieDasMainViewController.m */,
 				87C5C31718EE034A005FC288 /* DerDieDas.xcdatamodeld */,
-				8787BB5818E87938004E8C7D /* DerDieDasTableViewController.h */,
 				8787BB5918E87938004E8C7D /* DerDieDasTableViewController.m */,
 				8739C67918D8DDFE002D3463 /* DerDieDasEnterWordViewController.h */,
 				8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */,
@@ -158,6 +157,7 @@
 		876403A518D4AE040034A445 /* derdiedas */ = {
 			isa = PBXGroup;
 			children = (
+				8787BB5818E87938004E8C7D /* DerDieDasTableViewController.h */,
 				87D7E75218E63D0900A85B11 /* AnimationControllers */,
 				8739C67D18D8E5FA002D3463 /* Models */,
 				876403AE18D4AE040034A445 /* DerDieDasAppDelegate.h */,
