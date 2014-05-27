@@ -60,6 +60,7 @@ DerDieDasTableViewController * wordTableController = nil;
     wordTableController.tableView = self.wordTable;
     [self.wordTable setDelegate:wordTableController];
     [self.wordTable setDataSource:wordTableController];
+    self.wordTable.transform = CGAffineTransformMakeRotation(-M_PI);
     
     self.navigationItem.rightBarButtonItem = wordTableController.editButtonItem;
     
