@@ -1,32 +1,32 @@
 //
-//  DerDieDasMainViewController.m
-//  derdiedas
+//  ArtikelMainViewController.m
+//  Artikel
 //
 //  Created by Christopher Berry on 18/03/2014.
 //  Copyright (c) 2014 Christopher Berry. All rights reserved.
 //
-//  DerDieDas is free software: you can redistribute it and/or modify
+//  Artikel is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 2 of the License, or
 //  (at your option) any later version.
 //
-//  DerDieDas is distributed in the hope that it will be useful,
+//  Artikel is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with DerDieDas. If not, see <http://www.gnu.org/licenses/>.
+//  along with Artikel. If not, see <http://www.gnu.org/licenses/>.
 
-#import "DerDieDasMainViewController.h"
-#import "DerDieDasAnimationController.h"
-#import "DerDieDasEnterWordViewController.h"
+#import "ArtikelMainViewController.h"
+#import "ArtikelAnimationController.h"
+#import "ArtikelEnterWordViewController.h"
 
-@interface DerDieDasMainViewController ()
+@interface ArtikelMainViewController ()
 
 @end
 
-@implementation DerDieDasMainViewController
+@implementation ArtikelMainViewController
 
 static CGFloat _label_movement_offset;
 static volatile bool _ready_to_answer;
@@ -73,7 +73,7 @@ static volatile bool _ready_to_answer;
     NSString * article = [self.articleSelector
                           titleForSegmentAtIndex:[self.articleSelector selectedSegmentIndex]];
     
-    DerDieDasWord * word = [self.model current];
+    ArtikelWord * word = [self.model current];
     
     // is article correct?
     if([word attemptToAnswer:article])
@@ -83,13 +83,13 @@ static volatile bool _ready_to_answer;
         [self.articleLabel setHidden:false];
         
         // fade in the article label using opacity
-        [DerDieDasAnimationController DoFadeIn:[self.articleLabel layer] duration:0.5 delegate:self];
+        [ArtikelAnimationController DoFadeIn:[self.articleLabel layer] duration:0.5 delegate:self];
         
         // move both article and word labels into middle of view
-        [DerDieDasAnimationController DoMove:[self.wordLabel layer]
+        [ArtikelAnimationController DoMove:[self.wordLabel layer]
                                               xmove:_label_movement_offset
                                               ymove:0 duration:0.25 delegate:self];
-        [DerDieDasAnimationController DoMove:[self.articleLabel layer]
+        [ArtikelAnimationController DoMove:[self.articleLabel layer]
                                               xmove:_label_movement_offset
                                               ymove:0 duration:0.25 delegate:self];
         
@@ -105,7 +105,7 @@ static volatile bool _ready_to_answer;
     else
     {
         
-        [DerDieDasAnimationController DoShake:[self.wordLabel layer]
+        [ArtikelAnimationController DoShake:[self.wordLabel layer]
                                        offset:5.0
                                      duration:0.35
                                      delegate:self];
@@ -154,7 +154,7 @@ static volatile bool _ready_to_answer;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    DerDieDasEnterWordViewController * view = (DerDieDasEnterWordViewController *)[segue destinationViewController];
+    ArtikelEnterWordViewController * view = (ArtikelEnterWordViewController *)[segue destinationViewController];
     [view setModel:self.model];
 }
     

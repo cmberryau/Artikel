@@ -1,26 +1,26 @@
 //
-//  DerDieDasWord.m
-//  derdiedas
+//  ArtikelWord.m
+//  Artikel
 //
 //  Created by Christopher Berry on 18/03/2014.
 //  Copyright (c) 2014 Christopher Berry. All rights reserved.
 //
-//  DerDieDas is free software: you can redistribute it and/or modify
+//  Artikel is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 2 of the License, or
 //  (at your option) any later version.
 //
-//  DerDieDas is distributed in the hope that it will be useful,
+//  Artikel is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with DerDieDas. If not, see <http://www.gnu.org/licenses/>.
+//  along with Artikel. If not, see <http://www.gnu.org/licenses/>.
 
-#import "DerDieDasWord.h"
+#import "ArtikelWord.h"
 
-@implementation DerDieDasWord
+@implementation ArtikelWord
 
 @dynamic article;
 @dynamic characters;
@@ -32,7 +32,7 @@
 @synthesize managedObjectContext;
 
 // Inits a word with a complete string
-+(DerDieDasWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context
++(ArtikelWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context
 {
     if(string == nil)
         return nil;
@@ -42,7 +42,7 @@
     
     NSString * trimmed_string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
     NSError * error = nil;
     NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b([dD]([eE][rR]|[iI][eE]|[aA][sS])) (?u)[^\\W\\d_]+$\\b"
                                    options:0
@@ -71,7 +71,7 @@
 }
 
 // Inits a word with a seperate article and character string
-+(DerDieDasWord *) wordWithArticleAndCharacters:(NSString*) article characters:(NSString *) characters context:(NSManagedObjectContext *)context
++(ArtikelWord *) wordWithArticleAndCharacters:(NSString*) article characters:(NSString *) characters context:(NSManagedObjectContext *)context
 {
     if(article == nil || characters == nil)
         return nil;
@@ -82,7 +82,7 @@
     NSString * trimmed_article = [article stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString * trimmed_characters = [characters stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
 
     NSError * regex_error = nil;
     NSRegularExpression * article_regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b([dD]([eE][rR]|[iI][eE]|[aA][sS]))$\\b"

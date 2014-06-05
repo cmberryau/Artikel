@@ -1,40 +1,40 @@
 //
-//  derdiedasTests.m
-//  derdiedasTests
+//  ArtikelTests.m
+//  ArtikelTests
 //
 //  Created by Christopher Berry on 18/03/2014.
 //  Copyright (c) 2014 Christopher Berry. All rights reserved.
 //
-//  DerDieDas is free software: you can redistribute it and/or modify
+//  Artikel is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 2 of the License, or
 //  (at your option) any later version.
 //
-//  DerDieDas is distributed in the hope that it will be useful,
+//  Artikel is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with DerDieDas. If not, see <http://www.gnu.org/licenses/>.
+//  along with Artikel. If not, see <http://www.gnu.org/licenses/>.
 
 #import <XCTest/XCTest.h>
 
-#import "DerDieDasWord.h"
+#import "ArtikelWord.h"
 
-@interface derdiedasTests : XCTestCase
+@interface ArtikelTests : XCTestCase
 
 @property (strong, nonatomic) NSManagedObjectContext * managedObjectContext;
 
-- (void)testDerDieDasWordNormalChars;
-- (void)testDerDieDasWordNumericalChars;
-- (void)testDerDieDasWordSpecialChars;
-- (void)testDerDieDasWordRepeatedSequencesAndSpaces;
-- (void)testDerDieDasNullCases;
+- (void)testArtikelWordNormalChars;
+- (void)testArtikelWordNumericalChars;
+- (void)testArtikelWordSpecialChars;
+- (void)testArtikelWordRepeatedSequencesAndSpaces;
+- (void)testArtikelNullCases;
 
 @end
 
-@implementation derdiedasTests
+@implementation ArtikelTests
 
 - (void)setUp
 {
@@ -61,11 +61,11 @@
     [super tearDown];
 }
 
-- (void)testDerDieDasWordNormalChars
+- (void)testArtikelWordNormalChars
 {
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
     NSString * test_string = @"die Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -80,7 +80,7 @@
     word = nil;
     NSString * test_article = @"die";
     NSString * test_characters = @"Katze";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -92,7 +92,7 @@
     
     word = nil;
     test_string = @"die katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -107,7 +107,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"katze";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -119,7 +119,7 @@
  
     word = nil;
     test_string = @" die Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -134,7 +134,7 @@
     word = nil;
     test_article = @" die";
     test_characters = @"Katze";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -146,7 +146,7 @@
     
     word = nil;
     test_string = @"die Katze ";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -161,7 +161,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"Katze ";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -173,7 +173,7 @@
     
     word = nil;
     test_string = @" die katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -188,7 +188,7 @@
     word = nil;
     test_article = @" die";
     test_characters = @"katze";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
     }
@@ -199,7 +199,7 @@
     
     word = nil;
     test_string = @"die katze ";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -214,7 +214,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"katze ";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -226,7 +226,7 @@
     
     word = nil;
     test_string = @"die KATZE";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -241,7 +241,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"KATZE";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -253,7 +253,7 @@
     
     word = nil;
     test_string = @"DIE Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -268,7 +268,7 @@
     word = nil;
     test_article = @"DIE";
     test_characters = @"Katze";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -280,7 +280,7 @@
 
     word = nil;
     test_string = @"DIE katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -295,7 +295,7 @@
     word = nil;
     test_article = @"DIE";
     test_characters = @"katze";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -307,7 +307,7 @@
     
     word = nil;
     test_string = @"die KaTzE";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -322,7 +322,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"KaTzE";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -334,7 +334,7 @@
     
     word = nil;
     test_string = @"die kAtZe";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -349,7 +349,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"kAtZe";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -361,7 +361,7 @@
     
     word = nil;
     test_string = @"DIE KaTzE";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -376,7 +376,7 @@
     word = nil;
     test_article = @"DIE";
     test_characters = @"KaTzE";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -388,7 +388,7 @@
     
     word = nil;
     test_string = @"DIE kAtZe";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -403,7 +403,7 @@
     word = nil;
     test_article = @"DIE";
     test_characters = @"kAtZe";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -414,321 +414,321 @@
     }
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@"" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"die" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"die" context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@"DIE" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"DIE" context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@"die " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"die " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"DIE " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"DIE " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" die" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" die" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" DIE" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" DIE" context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@" die " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" die " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" DIE " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" DIE " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"katze" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"katze" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"KATZE" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"KATZE" context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@"katze " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"katze " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"KATZE " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"KATZE " context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@" katze" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" katze" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" KATZE" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" KATZE" context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
-    word = [DerDieDasWord wordWithString:@" katze " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" katze " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" KATZE " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" KATZE " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"diekatze" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"diekatze" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"dieKatze" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"dieKatze" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"dieKATZE" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"dieKATZE" context:self.managedObjectContext];
     XCTAssertNil(word);
 }
 
-- (void)testDerDieDasWordNumericalChars
+- (void)testArtikelWordNumericalChars
 {
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
     NSString * test_string = @"0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"der 0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     NSString * test_article = @"der";
     NSString * test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die 0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"die";
     test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"das 0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"das";
     test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DER 0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DER";
     test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DIE 0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DIE";
     test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DAS 0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DAS";
     test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_string = @"abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"ABC0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"0123456789abc";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"0123456789ABC";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"der abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"der";
     test_characters = @"abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"die";
     test_characters = @"abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"das abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"das";
     test_characters = @"abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DER abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"DER";
     test_characters = @"abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DIE abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DIE";
     test_characters = @"abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DAS abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DAS";
     test_characters = @"abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"der Abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"der";
     test_characters = @"Abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die Abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"die";
     test_characters = @"Abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"das Abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"das";
     test_characters = @"Abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DER Abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DER";
     test_characters = @"Abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DIE Abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = @"DIE";
     test_characters = @"Abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"DAS Abc0123456789";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"DAS";
     test_characters = @"Abc0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
 }
 
--(void)testDerDieDasWordSpecialChars
+-(void)testArtikelWordSpecialChars
 {
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
     NSString * test_string = @"die Tür";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
 
     if (![word.article isEqualToString:@"die"]) {
@@ -743,7 +743,7 @@
     word = nil;
     NSString * test_article = @"die";
     NSString * test_characters = @"Tür";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -755,7 +755,7 @@
     
     word = nil;
     test_string = @"die tür";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -770,7 +770,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"tür";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -782,7 +782,7 @@
     
     word = nil;
     test_string = @"die TÜR";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -797,7 +797,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"TÜR";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -809,7 +809,7 @@
     
     word = nil;
     test_string = @"DIE Tür";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -824,7 +824,7 @@
     word = nil;
     test_article = @"DIE";
     test_characters = @"Tür";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -836,7 +836,7 @@
     
     word = nil;
     test_string = @"DIE tür";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -851,7 +851,7 @@
     word = nil;
     test_article = @"DIE";
     test_characters = @"tür";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -863,7 +863,7 @@
     
     word = nil;
     test_string = @"die TüR";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -878,7 +878,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"TüR";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -890,7 +890,7 @@
 
     word = nil;
     test_string = @"die tüR";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -905,7 +905,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"tüR";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -917,7 +917,7 @@
     
     word = nil;
     test_string = @"die tÜr";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -932,7 +932,7 @@
     word = nil;
     test_article = @"die";
     test_characters = @"tÜr";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -944,7 +944,7 @@
     
     word = nil;
     test_string = @"DiE TüR";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -959,7 +959,7 @@
     word = nil;
     test_article = @"DiE";
     test_characters = @"TüR";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -971,7 +971,7 @@
     
     word = nil;
     test_string = @"diE tüR";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -986,7 +986,7 @@
     word = nil;
     test_article = @"diE";
     test_characters = @"tüR";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -998,7 +998,7 @@
     
     word = nil;
     test_string = @"dIe tÜr";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
     
     if (![word.article isEqualToString:@"die"]) {
@@ -1013,7 +1013,7 @@
     word = nil;
     test_article = @"dIe";
     test_characters = @"tÜr";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -1024,128 +1024,128 @@
     }
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"tür" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"tür" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"TÜR" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"TÜR" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"tür " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"tür " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"TÜR " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"TÜR " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" tür" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" tür" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" TÜR" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" TÜR" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" tür " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" tür " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@" TÜR " context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@" TÜR " context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"dietür" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"dietür" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"dieTür" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"dieTür" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"dieTÜR" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"dieTÜR" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"die $%#" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"die $%#" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"DIE $%#" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"DIE $%#" context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
-    word = [DerDieDasWord wordWithString:@"$%#" context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:@"$%#" context:self.managedObjectContext];
     XCTAssertNil(word);
 }
 
-- (void)testDerDieDasWordRepeatedSequencesAndSpaces
+- (void)testArtikelWordRepeatedSequencesAndSpaces
 {
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
     NSString * test_string = @"die die Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die Katze Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die K atze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die Ka tze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die Kat ze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"die Katz e";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"d ie Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_string = @"di e Katze";
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 }
 
--(void)testDerDieDasNullCases
+-(void)testArtikelNullCases
 {
-    DerDieDasWord * word = nil;
+    ArtikelWord * word = nil;
     NSString * test_string = nil;
-    word = [DerDieDasWord wordWithString:test_string context:self.managedObjectContext];
+    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     NSString * test_article = nil;
     NSString * test_characters = @"0123456789";
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
 
     word = nil;
     test_article = @"die";
     test_characters = nil;
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
     
     word = nil;
     test_article = nil;
     test_characters = nil;
-    word = [DerDieDasWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
     XCTAssertNil(word);
 }
 

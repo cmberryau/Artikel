@@ -8,26 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		872CFAE218EF0701000BF034 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872CFAE118EF0701000BF034 /* CoreData.framework */; };
-		8739C67B18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */; };
-		8739C68018DA3257002D3463 /* DerDieDasWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67F18DA3257002D3463 /* DerDieDasWordModel.m */; };
-		8739C68318DA32F5002D3463 /* DerDieDasWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C68218DA32F5002D3463 /* DerDieDasWord.m */; };
+		8739C67B18D8DDFE002D3463 /* ArtikelEnterWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67A18D8DDFE002D3463 /* ArtikelEnterWordViewController.m */; };
+		8739C68018DA3257002D3463 /* ArtikelWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C67F18DA3257002D3463 /* ArtikelWordModel.m */; };
+		8739C68318DA32F5002D3463 /* ArtikelWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8739C68218DA32F5002D3463 /* ArtikelWord.m */; };
 		876403A018D4AE040034A445 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8764039F18D4AE040034A445 /* Foundation.framework */; };
 		876403A218D4AE040034A445 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876403A118D4AE040034A445 /* CoreGraphics.framework */; };
 		876403A418D4AE040034A445 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876403A318D4AE040034A445 /* UIKit.framework */; };
 		876403AA18D4AE040034A445 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 876403A818D4AE040034A445 /* InfoPlist.strings */; };
 		876403AC18D4AE040034A445 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403AB18D4AE040034A445 /* main.m */; };
-		876403B018D4AE040034A445 /* DerDieDasAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403AF18D4AE040034A445 /* DerDieDasAppDelegate.m */; };
+		876403B018D4AE040034A445 /* ArtikelAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403AF18D4AE040034A445 /* ArtikelAppDelegate.m */; };
 		876403B218D4AE040034A445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 876403B118D4AE040034A445 /* Images.xcassets */; };
 		876403B918D4AE040034A445 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876403B818D4AE040034A445 /* XCTest.framework */; };
 		876403BA18D4AE040034A445 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8764039F18D4AE040034A445 /* Foundation.framework */; };
 		876403BB18D4AE040034A445 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876403A318D4AE040034A445 /* UIKit.framework */; };
 		876403C318D4AE040034A445 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 876403C118D4AE040034A445 /* InfoPlist.strings */; };
-		876403C518D4AE040034A445 /* derdiedasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403C418D4AE040034A445 /* derdiedasTests.m */; };
+		876403C518D4AE040034A445 /* ArtikelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403C418D4AE040034A445 /* ArtikelTests.m */; };
 		876403CF18D4BD770034A445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876403CE18D4BD770034A445 /* Main.storyboard */; };
-		876403D218D4FCAB0034A445 /* DerDieDasMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403D118D4FCAB0034A445 /* DerDieDasMainViewController.m */; };
-		8787BB5A18E87938004E8C7D /* DerDieDasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787BB5918E87938004E8C7D /* DerDieDasTableViewController.m */; };
-		87BE41A3191C142A00D475EA /* DerDieDas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87C5C31718EE034A005FC288 /* DerDieDas.xcdatamodeld */; };
-		87D7E75118E63C5200A85B11 /* DerDieDasAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D7E75018E63C5200A85B11 /* DerDieDasAnimationController.m */; };
+		876403D218D4FCAB0034A445 /* ArtikelMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403D118D4FCAB0034A445 /* ArtikelMainViewController.m */; };
+		8787BB5A18E87938004E8C7D /* ArtikelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */; };
+		87BE41A3191C142A00D475EA /* Artikel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87C5C31718EE034A005FC288 /* Artikel.xcdatamodeld */; };
+		87D7E75118E63C5200A85B11 /* ArtikelAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D7E75018E63C5200A85B11 /* ArtikelAnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,42 +36,42 @@
 			containerPortal = 8764039418D4AE040034A445 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8764039B18D4AE040034A445;
-			remoteInfo = derdiedas;
+			remoteInfo = Artikel;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		87216955191F7E1800E74829 /* DerDieDas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DerDieDas.xcdatamodel; sourceTree = "<group>"; };
+		87216955191F7E1800E74829 /* Artikel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Artikel.xcdatamodel; sourceTree = "<group>"; };
 		872CFAE118EF0701000BF034 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		8739C67918D8DDFE002D3463 /* DerDieDasEnterWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasEnterWordViewController.h; sourceTree = "<group>"; };
-		8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasEnterWordViewController.m; sourceTree = "<group>"; };
-		8739C67E18DA3257002D3463 /* DerDieDasWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasWordModel.h; sourceTree = "<group>"; };
-		8739C67F18DA3257002D3463 /* DerDieDasWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasWordModel.m; sourceTree = "<group>"; };
-		8739C68118DA32F5002D3463 /* DerDieDasWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasWord.h; sourceTree = "<group>"; };
-		8739C68218DA32F5002D3463 /* DerDieDasWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasWord.m; sourceTree = "<group>"; };
-		8764039C18D4AE040034A445 /* derdiedas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = derdiedas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8739C67918D8DDFE002D3463 /* ArtikelEnterWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelEnterWordViewController.h; sourceTree = "<group>"; };
+		8739C67A18D8DDFE002D3463 /* ArtikelEnterWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelEnterWordViewController.m; sourceTree = "<group>"; };
+		8739C67E18DA3257002D3463 /* ArtikelWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelWordModel.h; sourceTree = "<group>"; };
+		8739C67F18DA3257002D3463 /* ArtikelWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelWordModel.m; sourceTree = "<group>"; };
+		8739C68118DA32F5002D3463 /* ArtikelWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelWord.h; sourceTree = "<group>"; };
+		8739C68218DA32F5002D3463 /* ArtikelWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelWord.m; sourceTree = "<group>"; };
+		8764039C18D4AE040034A445 /* Artikel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artikel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8764039F18D4AE040034A445 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		876403A118D4AE040034A445 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		876403A318D4AE040034A445 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		876403A718D4AE040034A445 /* derdiedas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "derdiedas-Info.plist"; sourceTree = "<group>"; };
+		876403A718D4AE040034A445 /* Artikel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Artikel-Info.plist"; sourceTree = "<group>"; };
 		876403A918D4AE040034A445 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		876403AB18D4AE040034A445 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		876403AD18D4AE040034A445 /* derdiedas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "derdiedas-Prefix.pch"; sourceTree = "<group>"; };
-		876403AE18D4AE040034A445 /* DerDieDasAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DerDieDasAppDelegate.h; sourceTree = "<group>"; };
-		876403AF18D4AE040034A445 /* DerDieDasAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DerDieDasAppDelegate.m; sourceTree = "<group>"; };
+		876403AD18D4AE040034A445 /* Artikel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Artikel-Prefix.pch"; sourceTree = "<group>"; };
+		876403AE18D4AE040034A445 /* ArtikelAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtikelAppDelegate.h; sourceTree = "<group>"; };
+		876403AF18D4AE040034A445 /* ArtikelAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtikelAppDelegate.m; sourceTree = "<group>"; };
 		876403B118D4AE040034A445 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		876403B718D4AE040034A445 /* derdiedasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = derdiedasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		876403B718D4AE040034A445 /* ArtikelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtikelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		876403B818D4AE040034A445 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		876403C018D4AE040034A445 /* derdiedasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "derdiedasTests-Info.plist"; sourceTree = "<group>"; };
+		876403C018D4AE040034A445 /* ArtikelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ArtikelTests-Info.plist"; sourceTree = "<group>"; };
 		876403C218D4AE040034A445 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		876403C418D4AE040034A445 /* derdiedasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = derdiedasTests.m; sourceTree = "<group>"; };
+		876403C418D4AE040034A445 /* ArtikelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtikelTests.m; sourceTree = "<group>"; };
 		876403CE18D4BD770034A445 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		876403D018D4FCAB0034A445 /* DerDieDasMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasMainViewController.h; sourceTree = "<group>"; };
-		876403D118D4FCAB0034A445 /* DerDieDasMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasMainViewController.m; sourceTree = "<group>"; };
-		8787BB5818E87938004E8C7D /* DerDieDasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasTableViewController.h; sourceTree = "<group>"; };
-		8787BB5918E87938004E8C7D /* DerDieDasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasTableViewController.m; sourceTree = "<group>"; };
-		87D7E74F18E63C5200A85B11 /* DerDieDasAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DerDieDasAnimationController.h; sourceTree = "<group>"; };
-		87D7E75018E63C5200A85B11 /* DerDieDasAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DerDieDasAnimationController.m; sourceTree = "<group>"; };
+		876403D018D4FCAB0034A445 /* ArtikelMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelMainViewController.h; sourceTree = "<group>"; };
+		876403D118D4FCAB0034A445 /* ArtikelMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelMainViewController.m; sourceTree = "<group>"; };
+		8787BB5818E87938004E8C7D /* ArtikelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelTableViewController.h; sourceTree = "<group>"; };
+		8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelTableViewController.m; sourceTree = "<group>"; };
+		87D7E74F18E63C5200A85B11 /* ArtikelAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelAnimationController.h; sourceTree = "<group>"; };
+		87D7E75018E63C5200A85B11 /* ArtikelAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelAnimationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +102,12 @@
 		8739C67C18D8E5EA002D3463 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				876403D018D4FCAB0034A445 /* DerDieDasMainViewController.h */,
-				876403D118D4FCAB0034A445 /* DerDieDasMainViewController.m */,
-				87C5C31718EE034A005FC288 /* DerDieDas.xcdatamodeld */,
-				8787BB5918E87938004E8C7D /* DerDieDasTableViewController.m */,
-				8739C67918D8DDFE002D3463 /* DerDieDasEnterWordViewController.h */,
-				8739C67A18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m */,
+				8787BB5818E87938004E8C7D /* ArtikelTableViewController.h */,
+				876403D018D4FCAB0034A445 /* ArtikelMainViewController.h */,
+				876403D118D4FCAB0034A445 /* ArtikelMainViewController.m */,
+				8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */,
+				8739C67918D8DDFE002D3463 /* ArtikelEnterWordViewController.h */,
+				8739C67A18D8DDFE002D3463 /* ArtikelEnterWordViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -115,10 +115,10 @@
 		8739C67D18D8E5FA002D3463 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8739C68118DA32F5002D3463 /* DerDieDasWord.h */,
-				8739C68218DA32F5002D3463 /* DerDieDasWord.m */,
-				8739C67E18DA3257002D3463 /* DerDieDasWordModel.h */,
-				8739C67F18DA3257002D3463 /* DerDieDasWordModel.m */,
+				8739C68118DA32F5002D3463 /* ArtikelWord.h */,
+				8739C68218DA32F5002D3463 /* ArtikelWord.m */,
+				8739C67E18DA3257002D3463 /* ArtikelWordModel.h */,
+				8739C67F18DA3257002D3463 /* ArtikelWordModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -126,8 +126,8 @@
 		8764039318D4AE040034A445 = {
 			isa = PBXGroup;
 			children = (
-				876403A518D4AE040034A445 /* derdiedas */,
-				876403BE18D4AE040034A445 /* derdiedasTests */,
+				876403A518D4AE040034A445 /* Artikel */,
+				876403BE18D4AE040034A445 /* ArtikelTests */,
 				8764039E18D4AE040034A445 /* Frameworks */,
 				8764039D18D4AE040034A445 /* Products */,
 			);
@@ -136,8 +136,8 @@
 		8764039D18D4AE040034A445 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8764039C18D4AE040034A445 /* derdiedas.app */,
-				876403B718D4AE040034A445 /* derdiedasTests.xctest */,
+				8764039C18D4AE040034A445 /* Artikel.app */,
+				876403B718D4AE040034A445 /* ArtikelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,46 +154,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		876403A518D4AE040034A445 /* derdiedas */ = {
+		876403A518D4AE040034A445 /* Artikel */ = {
 			isa = PBXGroup;
 			children = (
-				8787BB5818E87938004E8C7D /* DerDieDasTableViewController.h */,
 				87D7E75218E63D0900A85B11 /* AnimationControllers */,
 				8739C67D18D8E5FA002D3463 /* Models */,
-				876403AE18D4AE040034A445 /* DerDieDasAppDelegate.h */,
-				876403AF18D4AE040034A445 /* DerDieDasAppDelegate.m */,
+				876403AE18D4AE040034A445 /* ArtikelAppDelegate.h */,
+				876403AF18D4AE040034A445 /* ArtikelAppDelegate.m */,
 				876403CE18D4BD770034A445 /* Main.storyboard */,
 				8739C67C18D8E5EA002D3463 /* ViewControllers */,
 				876403B118D4AE040034A445 /* Images.xcassets */,
 				876403A618D4AE040034A445 /* Supporting Files */,
 			);
-			path = derdiedas;
+			path = Artikel;
 			sourceTree = "<group>";
 		};
 		876403A618D4AE040034A445 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				876403AD18D4AE040034A445 /* derdiedas-Prefix.pch */,
-				876403A718D4AE040034A445 /* derdiedas-Info.plist */,
+				87C5C31718EE034A005FC288 /* Artikel.xcdatamodeld */,
+				876403AD18D4AE040034A445 /* Artikel-Prefix.pch */,
+				876403A718D4AE040034A445 /* Artikel-Info.plist */,
 				876403A818D4AE040034A445 /* InfoPlist.strings */,
 				876403AB18D4AE040034A445 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		876403BE18D4AE040034A445 /* derdiedasTests */ = {
+		876403BE18D4AE040034A445 /* ArtikelTests */ = {
 			isa = PBXGroup;
 			children = (
-				876403C418D4AE040034A445 /* derdiedasTests.m */,
+				876403C418D4AE040034A445 /* ArtikelTests.m */,
 				876403BF18D4AE040034A445 /* Supporting Files */,
 			);
-			path = derdiedasTests;
+			path = ArtikelTests;
 			sourceTree = "<group>";
 		};
 		876403BF18D4AE040034A445 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				876403C018D4AE040034A445 /* derdiedasTests-Info.plist */,
+				876403C018D4AE040034A445 /* ArtikelTests-Info.plist */,
 				876403C118D4AE040034A445 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -202,8 +202,8 @@
 		87D7E75218E63D0900A85B11 /* AnimationControllers */ = {
 			isa = PBXGroup;
 			children = (
-				87D7E74F18E63C5200A85B11 /* DerDieDasAnimationController.h */,
-				87D7E75018E63C5200A85B11 /* DerDieDasAnimationController.m */,
+				87D7E74F18E63C5200A85B11 /* ArtikelAnimationController.h */,
+				87D7E75018E63C5200A85B11 /* ArtikelAnimationController.m */,
 			);
 			name = AnimationControllers;
 			sourceTree = "<group>";
@@ -211,9 +211,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8764039B18D4AE040034A445 /* derdiedas */ = {
+		8764039B18D4AE040034A445 /* Artikel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 876403C818D4AE040034A445 /* Build configuration list for PBXNativeTarget "derdiedas" */;
+			buildConfigurationList = 876403C818D4AE040034A445 /* Build configuration list for PBXNativeTarget "Artikel" */;
 			buildPhases = (
 				8764039818D4AE040034A445 /* Sources */,
 				8764039918D4AE040034A445 /* Frameworks */,
@@ -223,14 +223,14 @@
 			);
 			dependencies = (
 			);
-			name = derdiedas;
-			productName = derdiedas;
-			productReference = 8764039C18D4AE040034A445 /* derdiedas.app */;
+			name = Artikel;
+			productName = Artikel;
+			productReference = 8764039C18D4AE040034A445 /* Artikel.app */;
 			productType = "com.apple.product-type.application";
 		};
-		876403B618D4AE040034A445 /* derdiedasTests */ = {
+		876403B618D4AE040034A445 /* ArtikelTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 876403CB18D4AE040034A445 /* Build configuration list for PBXNativeTarget "derdiedasTests" */;
+			buildConfigurationList = 876403CB18D4AE040034A445 /* Build configuration list for PBXNativeTarget "ArtikelTests" */;
 			buildPhases = (
 				876403B318D4AE040034A445 /* Sources */,
 				876403B418D4AE040034A445 /* Frameworks */,
@@ -241,9 +241,9 @@
 			dependencies = (
 				876403BD18D4AE040034A445 /* PBXTargetDependency */,
 			);
-			name = derdiedasTests;
-			productName = derdiedasTests;
-			productReference = 876403B718D4AE040034A445 /* derdiedasTests.xctest */;
+			name = ArtikelTests;
+			productName = ArtikelTests;
+			productReference = 876403B718D4AE040034A445 /* ArtikelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -252,7 +252,7 @@
 		8764039418D4AE040034A445 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = DerDieDas;
+				CLASSPREFIX = Artikel;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
@@ -261,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8764039718D4AE040034A445 /* Build configuration list for PBXProject "derdiedas" */;
+			buildConfigurationList = 8764039718D4AE040034A445 /* Build configuration list for PBXProject "Artikel" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -273,8 +273,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8764039B18D4AE040034A445 /* derdiedas */,
-				876403B618D4AE040034A445 /* derdiedasTests */,
+				8764039B18D4AE040034A445 /* Artikel */,
+				876403B618D4AE040034A445 /* ArtikelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,14 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8739C68018DA3257002D3463 /* DerDieDasWordModel.m in Sources */,
-				8739C68318DA32F5002D3463 /* DerDieDasWord.m in Sources */,
-				876403B018D4AE040034A445 /* DerDieDasAppDelegate.m in Sources */,
-				87D7E75118E63C5200A85B11 /* DerDieDasAnimationController.m in Sources */,
-				8739C67B18D8DDFE002D3463 /* DerDieDasEnterWordViewController.m in Sources */,
-				8787BB5A18E87938004E8C7D /* DerDieDasTableViewController.m in Sources */,
-				87BE41A3191C142A00D475EA /* DerDieDas.xcdatamodeld in Sources */,
-				876403D218D4FCAB0034A445 /* DerDieDasMainViewController.m in Sources */,
+				8739C68018DA3257002D3463 /* ArtikelWordModel.m in Sources */,
+				8739C68318DA32F5002D3463 /* ArtikelWord.m in Sources */,
+				876403B018D4AE040034A445 /* ArtikelAppDelegate.m in Sources */,
+				87D7E75118E63C5200A85B11 /* ArtikelAnimationController.m in Sources */,
+				8739C67B18D8DDFE002D3463 /* ArtikelEnterWordViewController.m in Sources */,
+				8787BB5A18E87938004E8C7D /* ArtikelTableViewController.m in Sources */,
+				87BE41A3191C142A00D475EA /* Artikel.xcdatamodeld in Sources */,
+				876403D218D4FCAB0034A445 /* ArtikelMainViewController.m in Sources */,
 				876403AC18D4AE040034A445 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876403C518D4AE040034A445 /* derdiedasTests.m in Sources */,
+				876403C518D4AE040034A445 /* ArtikelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +330,7 @@
 /* Begin PBXTargetDependency section */
 		876403BD18D4AE040034A445 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8764039B18D4AE040034A445 /* derdiedas */;
+			target = 8764039B18D4AE040034A445 /* Artikel */;
 			targetProxy = 876403BC18D4AE040034A445 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -431,8 +431,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "derdiedas/derdiedas-Prefix.pch";
-				INFOPLIST_FILE = "derdiedas/derdiedas-Info.plist";
+				GCC_PREFIX_HEADER = "Artikel/Artikel-Prefix.pch";
+				INFOPLIST_FILE = "Artikel/Artikel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -444,8 +444,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "derdiedas/derdiedas-Prefix.pch";
-				INFOPLIST_FILE = "derdiedas/derdiedas-Info.plist";
+				GCC_PREFIX_HEADER = "Artikel/Artikel-Prefix.pch";
+				INFOPLIST_FILE = "Artikel/Artikel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,19 +454,19 @@
 		876403CC18D4AE040034A445 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/derdiedas.app/derdiedas";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Artikel.app/Artikel";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "derdiedas/derdiedas-Prefix.pch";
+				GCC_PREFIX_HEADER = "Artikel/Artikel-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "derdiedasTests/derdiedasTests-Info.plist";
+				INFOPLIST_FILE = "ArtikelTests/ArtikelTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -476,15 +476,15 @@
 		876403CD18D4AE040034A445 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/derdiedas.app/derdiedas";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Artikel.app/Artikel";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "derdiedas/derdiedas-Prefix.pch";
-				INFOPLIST_FILE = "derdiedasTests/derdiedasTests-Info.plist";
+				GCC_PREFIX_HEADER = "Artikel/Artikel-Prefix.pch";
+				INFOPLIST_FILE = "ArtikelTests/ArtikelTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -494,7 +494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8764039718D4AE040034A445 /* Build configuration list for PBXProject "derdiedas" */ = {
+		8764039718D4AE040034A445 /* Build configuration list for PBXProject "Artikel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				876403C618D4AE040034A445 /* Debug */,
@@ -503,7 +503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		876403C818D4AE040034A445 /* Build configuration list for PBXNativeTarget "derdiedas" */ = {
+		876403C818D4AE040034A445 /* Build configuration list for PBXNativeTarget "Artikel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				876403C918D4AE040034A445 /* Debug */,
@@ -512,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		876403CB18D4AE040034A445 /* Build configuration list for PBXNativeTarget "derdiedasTests" */ = {
+		876403CB18D4AE040034A445 /* Build configuration list for PBXNativeTarget "ArtikelTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				876403CC18D4AE040034A445 /* Debug */,
@@ -524,13 +524,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		87C5C31718EE034A005FC288 /* DerDieDas.xcdatamodeld */ = {
+		87C5C31718EE034A005FC288 /* Artikel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				87216955191F7E1800E74829 /* DerDieDas.xcdatamodel */,
+				87216955191F7E1800E74829 /* Artikel.xcdatamodel */,
 			);
-			currentVersion = 87216955191F7E1800E74829 /* DerDieDas.xcdatamodel */;
-			path = DerDieDas.xcdatamodeld;
+			currentVersion = 87216955191F7E1800E74829 /* Artikel.xcdatamodel */;
+			path = Artikel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

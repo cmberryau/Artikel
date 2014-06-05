@@ -1,28 +1,28 @@
 //
-//  DerDieDasWordModel.m
-//  derdiedas
+//  ArtikelWordModel.m
+//  Artikel
 //
 //  Created by Christopher Berry on 18/03/2014.
 //  Copyright (c) 2014 Christopher Berry. All rights reserved.
 //
-//  DerDieDas is free software: you can redistribute it and/or modify
+//  Artikel is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 2 of the License, or
 //  (at your option) any later version.
 //
-//  DerDieDas is distributed in the hope that it will be useful,
+//  Artikel is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with DerDieDas. If not, see <http://www.gnu.org/licenses/>.
+//  along with Artikel. If not, see <http://www.gnu.org/licenses/>.
 
-#import "DerDieDasWordModel.h"
+#import "ArtikelWordModel.h"
 
-@implementation DerDieDasWordModel
+@implementation ArtikelWordModel
 
--(DerDieDasWordModel *) initWithManagedObjectContext:(NSManagedObjectContext *) context
+-(ArtikelWordModel *) initWithManagedObjectContext:(NSManagedObjectContext *) context
 {
     if(context == nil)
     {
@@ -89,7 +89,7 @@
 }
 
 // Returns true if the word already exists in the model
--(BOOL) containsWordObject:(DerDieDasWord *)word
+-(BOOL) containsWordObject:(ArtikelWord *)word
 {
     if(word == nil)
     {
@@ -148,23 +148,23 @@
 }
 
 // Adds a word to the model and returns the newly created object
--(DerDieDasWord *) addWord:(NSString *) whole_word
+-(ArtikelWord *) addWord:(NSString *) whole_word
 {
-    DerDieDasWord * word = [DerDieDasWord wordWithString:whole_word context:_managedObjectContext];
+    ArtikelWord * word = [ArtikelWord wordWithString:whole_word context:_managedObjectContext];
 
     return word;
 }
 
 // Adds a word to the model and returns the newly created object
--(DerDieDasWord *) addWord:(NSString *) article characters:(NSString *)characters
+-(ArtikelWord *) addWord:(NSString *) article characters:(NSString *)characters
 {
-    DerDieDasWord * word = [DerDieDasWord wordWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
+    ArtikelWord * word = [ArtikelWord wordWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
     
     return word;
 }
 
 // Deletes the word from the model
--(void) remove:(DerDieDasWord *)word
+-(void) remove:(ArtikelWord *)word
 {
     if(word == nil)
     {
@@ -182,7 +182,7 @@
     
     NSError * error;
     NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
-    DerDieDasWord * match = nil;
+    ArtikelWord * match = nil;
     
     // only one object returned, this is how it should be
     if([objects count] == 1)
@@ -205,9 +205,9 @@
 }
 
 // Returns the next word
--(DerDieDasWord *) next
+-(ArtikelWord *) next
 {
-    DerDieDasWord * match = nil;
+    ArtikelWord * match = nil;
     
     // try a first pass with a time limit, and if that does not work, try
     // without the time limit
@@ -242,7 +242,7 @@
 }
 
 // fetches a recently added word from the store
--(DerDieDasWord *) fetchRecentlyAddedWord
+-(ArtikelWord *) fetchRecentlyAddedWord
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
@@ -260,7 +260,7 @@
     
     if([objects count] > 0)
     {
-        DerDieDasWord * match = objects[arc4random_uniform((unsigned int)[objects count])];
+        ArtikelWord * match = objects[arc4random_uniform((unsigned int)[objects count])];
         return match;
     }
     
@@ -268,7 +268,7 @@
 }
 
 // fetches a word with a high fail rate
--(DerDieDasWord *) fetchDifficultWord:(BOOL) with_time_limit
+-(ArtikelWord *) fetchDifficultWord:(BOOL) with_time_limit
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
@@ -293,7 +293,7 @@
     NSError * error;
     NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
     
-    DerDieDasWord * match;
+    ArtikelWord * match;
     
     if([objects count] > 0)
     {
@@ -305,7 +305,7 @@
 }
 
 // fetches a word that the user has not attempted often
--(DerDieDasWord *) fetchRarelyAttemptedWord:(BOOL) with_time_limit
+-(ArtikelWord *) fetchRarelyAttemptedWord:(BOOL) with_time_limit
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
@@ -329,7 +329,7 @@
     NSError * error;
     NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
     
-    DerDieDasWord * match;
+    ArtikelWord * match;
     
     if([objects count] > 0)
     {
@@ -341,7 +341,7 @@
 }
 
 // Returns the current word
--(DerDieDasWord *) current
+-(ArtikelWord *) current
 {
     // incase words have been removed
     if([self count] <= 0){

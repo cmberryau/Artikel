@@ -1,26 +1,26 @@
 //
-//  DerDieDasAppDelegate.m
-//  derdiedas
+//  ArtikelAppDelegate.m
+//  Artikel
 //
 //  Created by Christopher Berry on 18/03/2014.
 //  Copyright (c) 2014 Christopher Berry. All rights reserved.
 //
-//  DerDieDas is free software: you can redistribute it and/or modify
+//  Artikel is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 2 of the License, or
 //  (at your option) any later version.
 //
-//  DerDieDas is distributed in the hope that it will be useful,
+//  Artikel is distributed in the hope that it will be useful,
 //  but WITHOUT ANY WARRANTY; without even the implied warranty of
 //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with DerDieDas. If not, see <http://www.gnu.org/licenses/>.
+//  along with Artikel. If not, see <http://www.gnu.org/licenses/>.
 
-#import "DerDieDasAppDelegate.h"
+#import "ArtikelAppDelegate.h"
 
-@implementation DerDieDasAppDelegate
+@implementation ArtikelAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -29,11 +29,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // create the model
-    DerDieDasWordModel * model = [[DerDieDasWordModel alloc] initWithManagedObjectContext:self.managedObjectContext];
+    ArtikelWordModel * model = [[ArtikelWordModel alloc] initWithManagedObjectContext:self.managedObjectContext];
 
     // plop the model reference into the view
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    DerDieDasMainViewController * main_view = (DerDieDasMainViewController *)navigationController.topViewController;
+    ArtikelMainViewController * main_view = (ArtikelMainViewController *)navigationController.topViewController;
     [main_view setModel:model];
     
     return YES;
@@ -108,7 +108,7 @@
         return _managedObjectModel;
     }
     
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"DerDieDas" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Artikel" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     
     return _managedObjectModel;
@@ -122,7 +122,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"DerDieDas.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Artikel.sqlite"];
     
     NSError *error = nil;
     
@@ -154,8 +154,8 @@
          */
         
         NSDictionary * options = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                                [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
         
         BOOL success = [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                        configuration:nil URL:storeURL

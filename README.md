@@ -1,4 +1,4 @@
-derdiedas
+Artikel
 =========
 
 A little iOS app for remembering German language articles

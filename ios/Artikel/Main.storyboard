@@ -7,7 +7,7 @@
         <!--Der Die Das Main View Controller-->
         <scene sceneID="9BA-zZ-XJA">
             <objects>
-                <viewController id="zsL-eQ-Bfs" customClass="DerDieDasMainViewController" sceneMemberID="viewController">
+                <viewController id="zsL-eQ-Bfs" customClass="ArtikelMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gsw-l7-6iM"/>
                         <viewControllerLayoutGuide type="bottom" id="hJj-bu-lZO"/>
@@ -81,7 +81,7 @@
         <!--Der Die Das Enter Word View Controller-->
         <scene sceneID="Y04-3t-Goa">
             <objects>
-                <viewController id="k57-Gs-iAJ" customClass="DerDieDasEnterWordViewController" sceneMemberID="viewController">
+                <viewController id="k57-Gs-iAJ" customClass="ArtikelEnterWordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qAm-If-8Ml"/>
                         <viewControllerLayoutGuide type="bottom" id="FEX-iK-UTR"/>
