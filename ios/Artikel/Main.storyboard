@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Der Die Das Main View Controller-->
+        <!--Artikel Main View Controller-->
         <scene sceneID="9BA-zZ-XJA">
             <objects>
                 <viewController id="zsL-eQ-Bfs" customClass="ArtikelMainViewController" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="976" y="32"/>
         </scene>
-        <!--Der Die Das Enter Word View Controller-->
+        <!--Artikel Enter Word View Controller-->
         <scene sceneID="Y04-3t-Goa">
             <objects>
                 <viewController id="k57-Gs-iAJ" customClass="ArtikelEnterWordViewController" sceneMemberID="viewController">
@@ -91,33 +91,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z46-hn-zLA">
-                                <rect key="frame" x="5" y="319" width="267" height="30"/>
+                                <rect key="frame" x="5" y="533" width="310" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="jeF-QQ-xOc"/>
+                                </constraints>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq9-50-lAo">
-                                <rect key="frame" x="272" y="319" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="A4o-hD-2pA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="wordAddTouchedUp:" destination="k57-Gs-iAJ" eventType="touchUpInside" id="Y5t-WY-NXa"/>
-                                </connections>
-                            </button>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-5l-fdl">
-                                <rect key="frame" x="0.0" y="66" width="320" height="251"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="251" id="jzy-ek-Thp"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WordPrototypeCell" textLabel="7eS-Lb-ZOM" style="IBUITableViewCellStyleDefault" id="mdo-lk-pW3">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -142,19 +128,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="z46-hn-zLA" secondAttribute="centerX" id="0Jb-x9-m0v"/>
                             <constraint firstItem="ng4-5l-fdl" firstAttribute="width" secondItem="CU4-ae-DSE" secondAttribute="width" id="5P1-Ba-NPP"/>
-                            <constraint firstAttribute="trailing" secondItem="Aq9-50-lAo" secondAttribute="trailing" constant="2" id="BnF-Iv-x8x"/>
-                            <constraint firstItem="z46-hn-zLA" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="2" id="CGa-JV-e04"/>
-                            <constraint firstItem="z46-hn-zLA" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="2" id="EeJ-cZ-6p3"/>
-                            <constraint firstItem="Aq9-50-lAo" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="2" id="GRV-HF-SII"/>
                             <constraint firstItem="z46-hn-zLA" firstAttribute="leading" secondItem="CU4-ae-DSE" secondAttribute="leading" constant="5" id="TJR-8z-4Qd"/>
-                            <constraint firstItem="Aq9-50-lAo" firstAttribute="leading" secondItem="z46-hn-zLA" secondAttribute="trailing" id="g29-Zs-dUS"/>
+                            <constraint firstItem="FEX-iK-UTR" firstAttribute="top" secondItem="z46-hn-zLA" secondAttribute="bottom" constant="5" id="bQJ-Y5-yI6"/>
+                            <constraint firstItem="z46-hn-zLA" firstAttribute="top" secondItem="ng4-5l-fdl" secondAttribute="bottom" constant="3" id="igM-1k-ZTO"/>
                             <constraint firstAttribute="centerX" secondItem="ng4-5l-fdl" secondAttribute="centerX" id="ih0-xK-Xlk"/>
                             <constraint firstItem="ng4-5l-fdl" firstAttribute="top" secondItem="qAm-If-8Ml" secondAttribute="bottom" constant="2" id="opF-Qc-NFJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jiv-GR-gfW"/>
                     <connections>
+                        <outlet property="constraintToAdjust" destination="bQJ-Y5-yI6" id="KL4-2m-Uec"/>
                         <outlet property="wordField" destination="z46-hn-zLA" id="ybP-Kl-Rgm"/>
                         <outlet property="wordTable" destination="ng4-5l-fdl" id="kOx-aG-RZu"/>
                     </connections>

@@ -136,11 +136,11 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    CGAffineTransform cell_transform = CGAffineTransformMakeRotation(M_PI);
+    //CGAffineTransform cell_transform = CGAffineTransformMakeRotation(M_PI);
     
     ArtikelWord * word = [[self.model fetchedResultsController] objectAtIndexPath:indexPath];
     cell.textLabel.text = [[word.article stringByAppendingString:@" "] stringByAppendingString:word.characters];
-    cell.transform = cell_transform;
+    //cell.transform = cell_transform;
 }
 
 /*

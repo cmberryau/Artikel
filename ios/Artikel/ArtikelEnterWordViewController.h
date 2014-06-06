@@ -22,9 +22,13 @@
 #import "ArtikelWordModel.h"
 
 @interface ArtikelEnterWordViewController : UIViewController <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField * wordField;
 @property (weak, nonatomic) IBOutlet UITableView * wordTable;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintToAdjust;
+
 @property (strong, nonatomic) ArtikelWordModel * model;
+
 
 // adds a word from the current content in the text field
 - (void)addWordFromTextField;

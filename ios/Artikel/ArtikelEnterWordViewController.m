@@ -50,21 +50,43 @@ ArtikelTableViewController * wordTableController = nil;
     {
         wordTableController = [[ArtikelTableViewController alloc] init];
     }
-    
-    self.wordField.delegate = self;
-    [self.wordField becomeFirstResponder];
-    [self.wordField setPlaceholder:@"e.g die Katze"];
 
+    self.wordField.delegate = self;
+    [self.wordField setPlaceholder:@"e.g die Katze"];
+    
     [wordTableController setModel:self.model];
     [[self.model fetchedResultsController] setDelegate:wordTableController];
     wordTableController.tableView = self.wordTable;
     [self.wordTable setDelegate:wordTableController];
     [self.wordTable setDataSource:wordTableController];
-    self.wordTable.transform = CGAffineTransformMakeRotation(-M_PI);
+    //self.wordTable.transform = CGAffineTransformMakeRotation(-M_PI);
     
     self.navigationItem.rightBarButtonItem = wordTableController.editButtonItem;
     
     [wordTableController realignTableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    // observe keyboard hide and show notifications to resize the text view appropriately
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillChangeFrameNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,8 +102,53 @@ ArtikelTableViewController * wordTableController = nil;
     return YES;
 }
 
-- (IBAction)wordAddTouchedUp:(id)sender {
+- (IBAction)wordAddTouchedUp:(id)sender
+{
     [self addWordFromTextField];
+}
+
+#pragma mark - Responding to keyboard events
+
+- (void)adjustTextViewByKeyboardState:(BOOL)showKeyboard keyboardInfo:(NSDictionary *)info
+{
+    if (showKeyboard) {
+        UIInterfaceOrientation orientation = self.interfaceOrientation;
+        BOOL isPortrait = UIDeviceOrientationIsPortrait(orientation);
+        
+        NSValue *keyboardFrameVal = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
+        CGRect keyboardFrame = [keyboardFrameVal CGRectValue];
+        CGFloat height = isPortrait ? keyboardFrame.size.height : keyboardFrame.size.width;
+        
+        // adjust the constraint constant to include the keyboard's height
+        self.constraintToAdjust.constant += height;
+    }
+    else {
+        self.constraintToAdjust.constant = 0;
+    }
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    
+    /*
+     Reduce the size of the text view so that it's not obscured by the keyboard.
+     Animate the resize so that it's in sync with the appearance of the keyboard.
+     */
+    
+    NSDictionary *userInfo = [notification userInfo];
+    [self adjustTextViewByKeyboardState:YES keyboardInfo:userInfo];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    
+    /*
+     Restore the size of the text view (fill self's view).
+     Animate the resize so that it's in sync with the disappearance of the keyboard.
+     */
+    
+    NSDictionary *userInfo = [notification userInfo];
+    [self adjustTextViewByKeyboardState:NO keyboardInfo:userInfo];
 }
 
 #pragma mark - Our methods
