@@ -115,20 +115,7 @@ ArtikelTableViewController * wordTableController = nil;
     UIViewAnimationCurve animationCurve = [info[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
     UIViewAnimationOptions animationOptions = UIViewAnimationOptionBeginFromCurrentState;
     
-    if (animationCurve == UIViewAnimationCurveEaseIn) {
-        animationOptions |= UIViewAnimationOptionCurveEaseIn;
-    }
-    else if (animationCurve == UIViewAnimationCurveEaseInOut) {
-        animationOptions |= UIViewAnimationOptionCurveEaseInOut;
-    }
-    else if (animationCurve == UIViewAnimationCurveEaseOut) {
-        animationOptions |= UIViewAnimationOptionCurveEaseOut;
-    }
-    else if (animationCurve == UIViewAnimationCurveLinear) {
-        animationOptions |= UIViewAnimationOptionCurveLinear;
-    }
-
-    animationCurve = animationCurve << 16;
+    animationOptions |= animationCurve << 16;
     
     if (showKeyboard) {
         UIInterfaceOrientation orientation = self.interfaceOrientation;
@@ -147,7 +134,7 @@ ArtikelTableViewController * wordTableController = nil;
     
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
-    [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
+    [UIView animateWithDuration:animationDuration delay:0 options:animationOptions animations:^{
         [self.view layoutIfNeeded];
     } completion:nil];
 }
