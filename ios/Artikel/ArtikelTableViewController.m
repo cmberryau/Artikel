@@ -117,13 +117,12 @@
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
     }
-    
-    [self realignTableView];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+    [self realignTableView];
 }
 
 #pragma mark - Our methods
@@ -131,7 +130,8 @@
 // realigns the tableview so that the most recently entered item is shown
 -(void)realignTableView
 {
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.tableView numberOfRowsInSection:0]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:true];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.tableView numberOfRowsInSection:0]-1 inSection:0]
+                          atScrollPosition:UITableViewScrollPositionBottom animated:true];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -142,16 +142,5 @@
     cell.textLabel.text = [[word.article stringByAppendingString:@" "] stringByAppendingString:word.characters];
     //cell.transform = cell_transform;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

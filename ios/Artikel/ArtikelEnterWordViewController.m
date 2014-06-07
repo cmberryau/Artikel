@@ -109,8 +109,27 @@ ArtikelTableViewController * wordTableController = nil;
 
 #pragma mark - Responding to keyboard events
 
-- (void)adjustTextViewByKeyboardState:(BOOL)showKeyboard keyboardInfo:(NSDictionary *)info
+- (void)adjustConstraintByKeyboardState:(BOOL)showKeyboard keyboardInfo:(NSDictionary *)info
 {
+    // transform the UIViewAnimationCurve to a UIViewAnimationOptions mask
+    UIViewAnimationCurve animationCurve = [info[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
+    UIViewAnimationOptions animationOptions = UIViewAnimationOptionBeginFromCurrentState;
+    
+    if (animationCurve == UIViewAnimationCurveEaseIn) {
+        animationOptions |= UIViewAnimationOptionCurveEaseIn;
+    }
+    else if (animationCurve == UIViewAnimationCurveEaseInOut) {
+        animationOptions |= UIViewAnimationOptionCurveEaseInOut;
+    }
+    else if (animationCurve == UIViewAnimationCurveEaseOut) {
+        animationOptions |= UIViewAnimationOptionCurveEaseOut;
+    }
+    else if (animationCurve == UIViewAnimationCurveLinear) {
+        animationOptions |= UIViewAnimationOptionCurveLinear;
+    }
+
+    animationCurve = animationCurve << 16;
+    
     if (showKeyboard) {
         UIInterfaceOrientation orientation = self.interfaceOrientation;
         BOOL isPortrait = UIDeviceOrientationIsPortrait(orientation);
@@ -125,33 +144,29 @@ ArtikelTableViewController * wordTableController = nil;
     else {
         self.constraintToAdjust.constant = 0;
     }
+    
+    NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [UIView animateWithDuration:animationDuration delay:0 options:animationCurve animations:^{
+        [self.view layoutIfNeeded];
+    } completion:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
 {
-    
-    /*
-     Reduce the size of the text view so that it's not obscured by the keyboard.
-     Animate the resize so that it's in sync with the appearance of the keyboard.
-     */
-    
     NSDictionary *userInfo = [notification userInfo];
-    [self adjustTextViewByKeyboardState:YES keyboardInfo:userInfo];
+    [self adjustConstraintByKeyboardState:YES keyboardInfo:userInfo];
+    
+    [wordTableController realignTableView];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
-    
-    /*
-     Restore the size of the text view (fill self's view).
-     Animate the resize so that it's in sync with the disappearance of the keyboard.
-     */
-    
     NSDictionary *userInfo = [notification userInfo];
-    [self adjustTextViewByKeyboardState:NO keyboardInfo:userInfo];
+    [self adjustConstraintByKeyboardState:NO keyboardInfo:userInfo];
 }
 
-#pragma mark - Our methods
+#pragma mark - Artikel related
 
 // adds a word from the current content in the text field
 -(void)addWordFromTextField
@@ -183,16 +198,5 @@ ArtikelTableViewController * wordTableController = nil;
         }
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
