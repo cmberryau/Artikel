@@ -102,9 +102,9 @@
 		8739C67C18D8E5EA002D3463 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8787BB5818E87938004E8C7D /* ArtikelTableViewController.h */,
 				876403D018D4FCAB0034A445 /* ArtikelMainViewController.h */,
 				876403D118D4FCAB0034A445 /* ArtikelMainViewController.m */,
+				8787BB5818E87938004E8C7D /* ArtikelTableViewController.h */,
 				8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */,
 				8739C67918D8DDFE002D3463 /* ArtikelEnterWordViewController.h */,
 				8739C67A18D8DDFE002D3463 /* ArtikelEnterWordViewController.m */,

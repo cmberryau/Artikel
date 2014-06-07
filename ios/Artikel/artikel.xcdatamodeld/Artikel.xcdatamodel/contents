@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Word" representedClassName="ArtikelWord" syncable="YES">
         <attribute name="article" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="characters" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date_created" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="fail_rate" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="last_attempt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="times_attempted" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="times_failed" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Word" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Word" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>
