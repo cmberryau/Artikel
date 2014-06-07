@@ -57,7 +57,7 @@
         
         [fetch_request setEntity:entity_description];
         
-        NSSortDescriptor * sort_descriptor = [[NSSortDescriptor alloc] initWithKey:@"fail_rate" ascending:NO];
+        NSSortDescriptor * sort_descriptor = [[NSSortDescriptor alloc] initWithKey:@"date_created" ascending:YES];
         NSArray * sort_descriptors_array = @[sort_descriptor];
         
         [fetch_request setSortDescriptors:sort_descriptors_array];
