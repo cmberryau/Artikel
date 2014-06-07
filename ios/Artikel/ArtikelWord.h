@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSNumber * times_failed;
 @property (nonatomic, strong) NSNumber * fail_rate;
 @property (nonatomic, strong) NSDate * last_attempt;
+@property (nonatomic, strong) NSDate * date_created;
 
 @property (strong, nonatomic) NSManagedObjectContext * managedObjectContext;
 

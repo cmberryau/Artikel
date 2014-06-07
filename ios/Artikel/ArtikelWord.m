@@ -28,6 +28,7 @@
 @dynamic times_failed;
 @dynamic fail_rate;
 @dynamic last_attempt;
+@dynamic date_created;
 
 @synthesize managedObjectContext;
 
@@ -63,6 +64,7 @@
         [word setTimes_attempted:0];
         [word setTimes_failed:0];
         [word setFail_rate:0];
+        [word setDate_created: [NSDate dateWithTimeIntervalSinceNow:0]];
     }
     
     word.managedObjectContext = context;
@@ -120,6 +122,7 @@
     [word setTimes_attempted:0];
     [word setTimes_failed:0];
     [word setFail_rate:0];
+    [word setDate_created: [NSDate dateWithTimeIntervalSinceNow:0]];
     
     word.managedObjectContext = context;
     
