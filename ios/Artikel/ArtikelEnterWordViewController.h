@@ -29,7 +29,6 @@
 
 @property (strong, nonatomic) ArtikelWordModel * model;
 
-
 // adds a word from the current content in the text field
 - (void)addWordFromTextField;
 

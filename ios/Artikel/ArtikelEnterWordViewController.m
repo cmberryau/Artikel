@@ -102,11 +102,6 @@ ArtikelTableViewController * wordTableController = nil;
     return YES;
 }
 
-- (IBAction)wordAddTouchedUp:(id)sender
-{
-    [self addWordFromTextField];
-}
-
 #pragma mark - Responding to keyboard events
 
 - (void)adjustConstraintByKeyboardState:(BOOL)showKeyboard keyboardInfo:(NSDictionary *)info
