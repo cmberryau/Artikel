@@ -161,11 +161,11 @@
 			children = (
 				87D7E75218E63D0900A85B11 /* AnimationControllers */,
 				8739C67D18D8E5FA002D3463 /* Models */,
+				8739C67C18D8E5EA002D3463 /* ViewControllers */,
 				876403AE18D4AE040034A445 /* ArtikelAppDelegate.h */,
 				876403AF18D4AE040034A445 /* ArtikelAppDelegate.m */,
 				876403CE18D4BD770034A445 /* iPhone.storyboard */,
 				87F539E619446BC200A9CAFA /* iPad.storyboard */,
-				8739C67C18D8E5EA002D3463 /* ViewControllers */,
 				876403B118D4AE040034A445 /* Images.xcassets */,
 				876403A618D4AE040034A445 /* Supporting Files */,
 			);
@@ -264,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8764039718D4AE040034A445 /* Build configuration list for PBXProject "Artikel" */;
+			buildConfigurationList = 8764039718D4AE040034A445 /* Build configuration list for PBXProject "artikel" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -501,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8764039718D4AE040034A445 /* Build configuration list for PBXProject "Artikel" */ = {
+		8764039718D4AE040034A445 /* Build configuration list for PBXProject "artikel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				876403C618D4AE040034A445 /* Debug */,
