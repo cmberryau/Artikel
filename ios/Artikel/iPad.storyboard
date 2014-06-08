@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGr-SL-tT9">
-                                <rect key="frame" x="15" y="526" width="738" height="71"/>
+                                <rect key="frame" x="125" y="526" width="518" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
@@ -55,7 +55,7 @@
                             <constraint firstAttribute="centerY" secondItem="MKF-e2-Sdd" secondAttribute="centerY" constant="30" id="2nr-hV-PMq"/>
                             <constraint firstAttribute="centerX" secondItem="AGr-SL-tT9" secondAttribute="centerX" id="JAJ-fE-hQk"/>
                             <constraint firstItem="AGr-SL-tT9" firstAttribute="top" secondItem="yo7-lz-ne7" secondAttribute="bottom" constant="20" id="L3M-sh-Ds6"/>
-                            <constraint firstAttribute="width" secondItem="AGr-SL-tT9" secondAttribute="width" constant="30" id="MaN-d3-Rmf"/>
+                            <constraint firstAttribute="width" secondItem="AGr-SL-tT9" secondAttribute="width" constant="250" id="MaN-d3-Rmf"/>
                             <constraint firstAttribute="centerX" secondItem="yo7-lz-ne7" secondAttribute="centerX" id="YIz-04-9Us"/>
                             <constraint firstAttribute="centerY" secondItem="yo7-lz-ne7" secondAttribute="centerY" constant="30" id="emY-jT-go3"/>
                             <constraint firstItem="yo7-lz-ne7" firstAttribute="leading" secondItem="MKF-e2-Sdd" secondAttribute="trailing" constant="4" id="vP6-Qt-fqy"/>
