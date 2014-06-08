@@ -46,6 +46,7 @@ static volatile bool _ready_to_answer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self setArticleSelectorFontSize:20];
     
     _label_movement_offset = (self.articleLabel.bounds.size.width/2);
@@ -63,7 +64,10 @@ static volatile bool _ready_to_answer;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)articleSelectorValueChanged:(id)sender {
+#pragma mark - Calls from UI
+
+- (IBAction)articleSelectorValueChanged:(id)sender
+{
     // hack to fix the font size
     [self setArticleSelectorFontSize:20];
     
