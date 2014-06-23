@@ -20,8 +20,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ArtikelWordModel.h"
+#import "GAITrackedViewController.h"
 
-@interface ArtikelEnterWordViewController : UIViewController <UITextFieldDelegate>
+@interface ArtikelEnterWordViewController : GAITrackedViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField * wordField;
 @property (weak, nonatomic) IBOutlet UITableView * wordTable;
