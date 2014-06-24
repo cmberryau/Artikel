@@ -26,7 +26,6 @@
 		876403CF18D4BD770034A445 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876403CE18D4BD770034A445 /* iPhone.storyboard */; };
 		876403D218D4FCAB0034A445 /* ArtikelMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403D118D4FCAB0034A445 /* ArtikelMainViewController.m */; };
 		8787BB5A18E87938004E8C7D /* ArtikelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */; };
-		8794A0D81958377B00EF41DE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8794A0D71958377B00EF41DE /* AdSupport.framework */; };
 		8794A0DA1958378B00EF41DE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8794A0D91958378B00EF41DE /* SystemConfiguration.framework */; };
 		8794A0DC1958379600EF41DE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8794A0DB1958379600EF41DE /* libz.dylib */; };
 		8794A0DE19583FCC00EF41DE /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8794A0DD19583FCC00EF41DE /* libGoogleAnalyticsServices.a */; };
@@ -81,7 +80,6 @@
 		8794A0D21958372F00EF41DE /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
 		8794A0D31958372F00EF41DE /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		8794A0D41958372F00EF41DE /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		8794A0D71958377B00EF41DE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8794A0D91958378B00EF41DE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8794A0DB1958379600EF41DE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8794A0DD19583FCC00EF41DE /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = ../../../../../Library/Frameworks/GoogleAnalytics/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				8794A0DE19583FCC00EF41DE /* libGoogleAnalyticsServices.a in Frameworks */,
 				8794A0DC1958379600EF41DE /* libz.dylib in Frameworks */,
 				8794A0DA1958378B00EF41DE /* SystemConfiguration.framework in Frameworks */,
-				8794A0D81958377B00EF41DE /* AdSupport.framework in Frameworks */,
 				872CFAE218EF0701000BF034 /* CoreData.framework in Frameworks */,
 				876403A218D4AE040034A445 /* CoreGraphics.framework in Frameworks */,
 				876403A418D4AE040034A445 /* UIKit.framework in Frameworks */,
@@ -168,7 +165,6 @@
 				8794A0DD19583FCC00EF41DE /* libGoogleAnalyticsServices.a */,
 				8794A0DB1958379600EF41DE /* libz.dylib */,
 				8794A0D91958378B00EF41DE /* SystemConfiguration.framework */,
-				8794A0D71958377B00EF41DE /* AdSupport.framework */,
 				872CFAE118EF0701000BF034 /* CoreData.framework */,
 				8764039F18D4AE040034A445 /* Foundation.framework */,
 				876403A118D4AE040034A445 /* CoreGraphics.framework */,
