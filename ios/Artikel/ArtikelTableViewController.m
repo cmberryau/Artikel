@@ -61,6 +61,17 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
+    
+    ArtikelWord * word = [[self.model fetchedResultsController] objectAtIndexPath:indexPath];
+    
+    if(word != NULL)
+    {
+        if([[word characters] isEqualToString:@"Katze"] && [[word article] isEqualToString:@"die"])
+        {
+            return NO;
+        }
+    }
+    
     return YES;
 }
 

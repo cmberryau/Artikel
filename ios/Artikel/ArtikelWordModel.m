@@ -171,6 +171,12 @@
         [NSException raise:@"Passed word cannot be null" format:@""];
     }
     
+    // cannot remove die Katze
+    if([[word characters] isEqualToString:@"Katze"] && [[word article] isEqualToString:@"die"])
+    {
+        return;
+    }
+    
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
     
