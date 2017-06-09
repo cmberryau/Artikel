@@ -64,8 +64,6 @@ ArtikelTableViewController * wordTableController = nil;
     self.navigationItem.rightBarButtonItem = wordTableController.editButtonItem;
     
     [wordTableController realignTableView];
-    
-    self.screenName = @"Article entry screen";
 }
 
 - (void)viewDidAppear:(BOOL)animated {

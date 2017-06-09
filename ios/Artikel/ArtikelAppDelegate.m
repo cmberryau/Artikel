@@ -19,7 +19,6 @@
 //  along with Artikel. If not, see <http://www.gnu.org/licenses/>.
 
 #import "ArtikelAppDelegate.h"
-#import "GAI.h"
 
 @implementation ArtikelAppDelegate
 
@@ -28,21 +27,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Google analytics stuff
-    
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Optional: set Logger to VERBOSE for debug information.
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    
-    // Initialize tracker. Replace with your tracking ID.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-52185903-1"];
-    
+{    
     // create the model
     ArtikelWordModel * model = [[ArtikelWordModel alloc] initWithManagedObjectContext:self.managedObjectContext];
 

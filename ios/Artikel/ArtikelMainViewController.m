@@ -51,8 +51,6 @@ static volatile bool _ready_to_answer;
     
     _label_movement_offset = (self.articleLabel.bounds.size.width/2);
     _ready_to_answer = true;
-    
-    self.screenName = @"Home screen";
 }
 
 - (void)viewWillAppear:(BOOL)animated

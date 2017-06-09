@@ -20,9 +20,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ArtikelWordModel.h"
-#import "GAITrackedViewController.h"
 
-@interface ArtikelMainViewController : GAITrackedViewController
+@interface ArtikelMainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *articleSelector;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
