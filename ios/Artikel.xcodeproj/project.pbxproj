@@ -26,6 +26,7 @@
 		876403D218D4FCAB0034A445 /* ArtikelMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876403D118D4FCAB0034A445 /* ArtikelMainViewController.m */; };
 		8787BB5A18E87938004E8C7D /* ArtikelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */; };
 		8794A0DA1958378B00EF41DE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8794A0D91958378B00EF41DE /* SystemConfiguration.framework */; };
+		87BB3E0B1EEA42A900724B96 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BB3E0A1EEA42A900724B96 /* Launch Screen.storyboard */; };
 		87BE41A3191C142A00D475EA /* Artikel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87C5C31718EE034A005FC288 /* Artikel.xcdatamodeld */; };
 		87D7E75118E63C5200A85B11 /* ArtikelAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D7E75018E63C5200A85B11 /* ArtikelAnimationController.m */; };
 		87F539E719446BC200A9CAFA /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F539E619446BC200A9CAFA /* iPad.storyboard */; };
@@ -71,6 +72,7 @@
 		8787BB5818E87938004E8C7D /* ArtikelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelTableViewController.h; sourceTree = "<group>"; };
 		8787BB5918E87938004E8C7D /* ArtikelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelTableViewController.m; sourceTree = "<group>"; };
 		8794A0D91958378B00EF41DE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		87BB3E0A1EEA42A900724B96 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		87D7E74F18E63C5200A85B11 /* ArtikelAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtikelAnimationController.h; sourceTree = "<group>"; };
 		87D7E75018E63C5200A85B11 /* ArtikelAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtikelAnimationController.m; sourceTree = "<group>"; };
 		87F539E619446BC200A9CAFA /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				8739C67C18D8E5EA002D3463 /* ViewControllers */,
 				876403AE18D4AE040034A445 /* ArtikelAppDelegate.h */,
 				876403AF18D4AE040034A445 /* ArtikelAppDelegate.m */,
+				87BB3E0A1EEA42A900724B96 /* Launch Screen.storyboard */,
 				876403CE18D4BD770034A445 /* iPhone.storyboard */,
 				87F539E619446BC200A9CAFA /* iPad.storyboard */,
 				876403B118D4AE040034A445 /* Images.xcassets */,
@@ -290,6 +293,7 @@
 				87F539E719446BC200A9CAFA /* iPad.storyboard in Resources */,
 				876403CF18D4BD770034A445 /* iPhone.storyboard in Resources */,
 				876403AA18D4AE040034A445 /* InfoPlist.strings in Resources */,
+				87BB3E0B1EEA42A900724B96 /* Launch Screen.storyboard in Resources */,
 				876403B218D4AE040034A445 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
