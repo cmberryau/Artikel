@@ -458,7 +458,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GoogleAnalytics",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bulkloose.artikel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +477,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks/GoogleAnalytics",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bulkloose.artikel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
