@@ -120,7 +120,8 @@
 }
 
 // Returns true if the word already exists in the model
--(BOOL) contains:(NSString *) article characters:(NSString *)characters
+-(BOOL) contains:(NSString *) article
+      characters:(NSString *)characters
 {
     if(article == nil || characters == nil)
     {
@@ -158,7 +159,8 @@
 }
 
 // Adds a word to the model and returns the newly created object
--(ArtikelWord *) addWord:(NSString *) article characters:(NSString *)characters
+-(ArtikelWord *) addWord:(NSString *) article
+              characters:(NSString *)characters
 {
     ArtikelWord * word = [ArtikelWord wordWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
     

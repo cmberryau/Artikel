@@ -33,12 +33,13 @@
 @property (strong, nonatomic) NSManagedObjectContext * managedObjectContext;
 
 // Inits a word with a complete string
-+(ArtikelWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context;
++(ArtikelWord *) wordWithString:(NSString*) string
+                        context:(NSManagedObjectContext *)context;
 
 // Inits a word with a seperate article and character string
 +(ArtikelWord *) wordWithArticleAndCharacters:(NSString*) article
-                                     characters:(NSString *)characters
-                                     context:(NSManagedObjectContext *)context;
+                                   characters:(NSString *)characters
+                                      context:(NSManagedObjectContext *)context;
 
 // Returns true if article given is the correct article
 // and performs internal logic for model update

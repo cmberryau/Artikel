@@ -40,13 +40,15 @@
 -(BOOL) contains:(NSString *) whole_word;
 
 // Returns true if the word already exists in the model
--(BOOL) contains:(NSString *) article characters:(NSString *)characters;
+-(BOOL) contains:(NSString *) article
+      characters:(NSString *)characters;
 
 // Adds a word to the model and returns the newly created object
 -(ArtikelWord *) addWord:(NSString *) whole_word;
 
 // Adds a word to the model and returns the newly created object
--(ArtikelWord *) addWord:(NSString *) article characters:(NSString *)characters;
+-(ArtikelWord *) addWord:(NSString *) article
+              characters:(NSString *)characters;
 
 // Deletes the word from the model
 -(void) remove:(ArtikelWord *)word;

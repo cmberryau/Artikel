@@ -33,7 +33,8 @@
 @synthesize managedObjectContext;
 
 // initialises a word using a complete string
-+(ArtikelWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context
++(ArtikelWord *) wordWithString:(NSString*) string
+                        context:(NSManagedObjectContext *)context
 {
     if(string == nil)
         return nil;
@@ -88,7 +89,9 @@
 }
 
 // initialises a word using a seperate article and character string
-+(ArtikelWord *) wordWithArticleAndCharacters:(NSString*) article characters:(NSString *) characters context:(NSManagedObjectContext *)context
++(ArtikelWord *) wordWithArticleAndCharacters:(NSString*) article
+                                   characters:(NSString *) characters
+                                      context:(NSManagedObjectContext *)context
 {
     if(article == nil || characters == nil)
         return nil;

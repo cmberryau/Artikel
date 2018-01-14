@@ -33,12 +33,10 @@ ArtikelTableViewController * wordTableController = nil;
 
 #pragma mark - Inherited & Protocol methods
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -60,7 +58,6 @@ ArtikelTableViewController * wordTableController = nil;
     wordTableController.tableView = self.wordTable;
     [self.wordTable setDelegate:wordTableController];
     [self.wordTable setDataSource:wordTableController];
-    //self.wordTable.transform = CGAffineTransformMakeRotation(-M_PI);
     
     self.navigationItem.rightBarButtonItem = wordTableController.editButtonItem;
     
@@ -70,25 +67,15 @@ ArtikelTableViewController * wordTableController = nil;
 - (void)viewDidAppear:(BOOL)animated
 {
     // subscribe to notifications for keyboard being shown or hidden
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     // unsubscribe from notifications for keyboard being shown or hidden
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillChangeFrameNotification
-                                                  object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIKeyboardWillHideNotification
-                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,7 +92,8 @@ ArtikelTableViewController * wordTableController = nil;
 
 #pragma mark - Responding to keyboard events
 
-- (void)adjustConstraintByKeyboardState:(BOOL)showKeyboard keyboardInfo:(NSDictionary *)info
+- (void)adjustConstraintByKeyboardState:(BOOL)showKeyboard
+                           keyboardInfo:(NSDictionary *)info
 {
     // transform the UIViewAnimationCurve to a UIViewAnimationOptions mask
     UIViewAnimationCurve animationCurve = [info[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
@@ -136,7 +124,6 @@ ArtikelTableViewController * wordTableController = nil;
 {
     NSDictionary *userInfo = [notification userInfo];
     [self adjustConstraintByKeyboardState:YES keyboardInfo:userInfo];
-    
     [wordTableController realignTableView];
 }
 
@@ -151,12 +138,10 @@ ArtikelTableViewController * wordTableController = nil;
 // adds a word from the current content in the text field
 -(void)addWordFromTextField
 {
-    // if the word was valid, and we don't already have it in the model
     if([self.model contains:self.wordField.text])
     {
         NSLog(@"Model already contains word, should alert user!");
     }
-    // if the word was not valid or we already have it in the model
     else
     {
         ArtikelWord * word = [self.model addWord:self.wordField.text];
@@ -164,10 +149,7 @@ ArtikelTableViewController * wordTableController = nil;
         if(!word)
         {
             // do not clear the text field, and show that the word is invalid
-            [ArtikelAnimationController DoShake:self.wordField.layer
-                                           offset:5.0
-                                         duration:0.35
-                                         delegate:self];
+            [ArtikelAnimationController DoShake:self.wordField.layer offset:5.0 duration:0.35 delegate:self];
         }
         else
         {

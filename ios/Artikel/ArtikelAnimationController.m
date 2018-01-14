@@ -25,20 +25,18 @@
 // shakes the layer in the X direction + and - offset for a duration
 // of duration for a full shake cycle
 +(CAKeyframeAnimation *) DoShake:(CALayer *) layer
-                            offset:(CGFloat) offset
-                            duration:(CFTimeInterval) duration
-                            delegate:(id) delegate
+                          offset:(CGFloat) offset
+                        duration:(CFTimeInterval) duration
+                        delegate:(id) delegate
 {
     CAKeyframeAnimation * shake_anim = [CAKeyframeAnimation animation];
     CGMutablePathRef shake_path = CGPathCreateMutable();
     CGPathMoveToPoint(shake_path, NULL, layer.position.x, layer.position.y);
     
-    for(int index = 0; index<3; index++)
+    for(int i = 0; i < 3; ++i)
     {
-        CGPathAddLineToPoint(shake_path, NULL,
-                             layer.position.x-offset, layer.position.y);
-        CGPathAddLineToPoint(shake_path, NULL,
-                             layer.position.x+offset, layer.position.y);
+        CGPathAddLineToPoint(shake_path, NULL, layer.position.x-offset, layer.position.y);
+        CGPathAddLineToPoint(shake_path, NULL, layer.position.x+offset, layer.position.y);
     }
     
     CGPathCloseSubpath(shake_path);
@@ -53,8 +51,8 @@
 
 // fades the layer in over a duration of seconds
 +(CABasicAnimation *) DoFadeIn:(CALayer *) layer
-                             duration:(CFTimeInterval) duration
-                             delegate:(id) delegate
+                      duration:(CFTimeInterval) duration
+                      delegate:(id) delegate
 {
     CABasicAnimation * fade_anim = [CABasicAnimation animation];
     fade_anim.fromValue = [NSNumber numberWithFloat:0.0f];
@@ -71,8 +69,8 @@
 
 // fades the layer out over a duration of seconds
 +(CABasicAnimation *) DoFadeOut:(CALayer *) layer
-                              duration:(CFTimeInterval) duration
-                              delegate:(id) delegate
+                       duration:(CFTimeInterval) duration
+                       delegate:(id) delegate
 {
     CABasicAnimation * fade_anim = [CABasicAnimation animation];
     fade_anim.fromValue = [NSNumber numberWithFloat:1.0f];
@@ -89,10 +87,10 @@
 
 // moves the layer along x and y axis over a duration of seconds
 +(CABasicAnimation *) DoMove:(CALayer*) layer
-                          xmove:(CGFloat) xmove
-                          ymove:(CGFloat) ymove
-                          duration:(CFTimeInterval) duration
-                          delegate:(id) delegate
+                       xmove:(CGFloat) xmove
+                       ymove:(CGFloat) ymove
+                    duration:(CFTimeInterval) duration
+                    delegate:(id) delegate
 {
     CGPoint to_point = layer.position;
     to_point.x += xmove; to_point.y += ymove;
