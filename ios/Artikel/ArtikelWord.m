@@ -32,7 +32,7 @@
 
 @synthesize managedObjectContext;
 
-// Inits a word with a complete string
+// initialises a word using a complete string
 +(ArtikelWord *) wordWithString:(NSString*) string context:(NSManagedObjectContext *)context
 {
     if(string == nil)
@@ -45,22 +45,37 @@
     
     ArtikelWord * word = nil;
     NSError * error = nil;
-    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b([dD]([eE][rR]|[iI][eE]|[aA][sS])) (?u)[^\\W\\d_]+$\\b"
-                                   options:0
+    NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b([d]([e][r]|[i][e]|[a][s])) (?u)([a-z]|[ß]|[ü]|[ä]|[ö])([a-z]|[ß]|[ü]|[ä]|[ö]|[-]|[ ])+$\\b"
+                                   options:NSRegularExpressionCaseInsensitive
                                    error: &error];
     
     NSUInteger regex_matches = [regex numberOfMatchesInString:trimmed_string
                                 options:0
                                 range:NSMakeRange(0, [trimmed_string length])];
-
+    
     if(regex_matches == 1)
     {
         NSArray * strings = [trimmed_string componentsSeparatedByString:@" "];
+        NSString * characters = [[strings objectAtIndex:1] capitalizedString];
+        
+        if([strings count] > 2)
+        {
+            for(NSUInteger i = 0; i < [strings count] - 2; ++i)
+            {
+                // perform a bit more sanitisation
+                NSString * characters_part = [[strings objectAtIndex:i + 2] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                
+                if([characters_part length] > 0)
+                {
+                    characters = [characters stringByAppendingString:@" "];
+                    characters = [characters stringByAppendingString:[characters_part capitalizedString]];
+                }
+            }
+        }
         
         word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:context];
-        
         [word setArticle: [[strings objectAtIndex:0] lowercaseString]];
-        [word setCharacters: [[strings objectAtIndex:1] capitalizedString]];
+        [word setCharacters:characters];
         [word setTimes_attempted:0];
         [word setTimes_failed:0];
         [word setFail_rate:0];
@@ -72,7 +87,7 @@
     return word;
 }
 
-// Inits a word with a seperate article and character string
+// initialises a word using a seperate article and character string
 +(ArtikelWord *) wordWithArticleAndCharacters:(NSString*) article characters:(NSString *) characters context:(NSManagedObjectContext *)context
 {
     if(article == nil || characters == nil)
@@ -81,56 +96,13 @@
     if(context == nil)
         [NSException raise:@"Passed NSMangedObjectContext cannot be null" format:@""];
     
-    NSString * trimmed_article = [article stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    NSString * trimmed_characters = [characters stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString * wordString = [article stringByAppendingString:@" "];
+    wordString = [wordString stringByAppendingString:characters];
     
-    ArtikelWord * word = nil;
-
-    NSError * regex_error = nil;
-    NSRegularExpression * article_regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b([dD]([eE][rR]|[iI][eE]|[aA][sS]))$\\b"
-                                                                                    options:0
-                                                                                      error:&regex_error];
-    
-    NSInteger regex_matches = [article_regex numberOfMatchesInString:trimmed_article
-                                                             options:0
-                                                               range:NSMakeRange(0, [trimmed_article length])];
-    
-    // if the regex was not satisfied
-    if(regex_matches != 1)
-    {
-        return word;
-    }
-    
-    NSRegularExpression * character_regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b(?u)[^\\W\\d_]+$\\b"
-                                                                                      options:0
-                                                                                        error: &regex_error];
-
-    regex_matches = [character_regex numberOfMatchesInString:trimmed_characters
-                                                   options:0
-                                                     range:NSMakeRange(0, [trimmed_characters length])];
-    
-    // if the regex was not satisfied
-    if(regex_matches != 1)
-    {
-        return word;
-    }
-        
-    word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:context];
-    
-    [word setArticle: [trimmed_article lowercaseString]];
-    [word setCharacters: [trimmed_characters capitalizedString]];
-    [word setTimes_attempted:0];
-    [word setTimes_failed:0];
-    [word setFail_rate:0];
-    [word setDate_created: [NSDate dateWithTimeIntervalSinceNow:0]];
-    
-    word.managedObjectContext = context;
-    
-    return word;
+    return [self wordWithString:wordString context:context];
 }
 
-// Returns true if article given is the correct article
-// and performs internal logic for model update
+// returns true if article given is the correct article and performs internal logic for model update
 -(BOOL) attemptToAnswer:(NSString *) article_given
 {
     if(article_given == nil)

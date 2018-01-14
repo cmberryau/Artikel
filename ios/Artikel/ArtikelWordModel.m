@@ -151,7 +151,9 @@
 -(ArtikelWord *) addWord:(NSString *) whole_word
 {
     ArtikelWord * word = [ArtikelWord wordWithString:whole_word context:_managedObjectContext];
-
+    
+    NSError * error;
+    [_managedObjectContext save:&error];
     return word;
 }
 
@@ -160,6 +162,8 @@
 {
     ArtikelWord * word = [ArtikelWord wordWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
     
+    NSError * error;
+    [_managedObjectContext save:&error];
     return word;
 }
 

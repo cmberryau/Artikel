@@ -51,6 +51,7 @@ ArtikelTableViewController * wordTableController = nil;
         wordTableController = [[ArtikelTableViewController alloc] init];
     }
 
+    // set the field's delegate for UITextFieldDelegate protocol
     self.wordField.delegate = self;
     [self.wordField setPlaceholder:@"e.g die Katze"];
     
@@ -66,9 +67,9 @@ ArtikelTableViewController * wordTableController = nil;
     [wordTableController realignTableView];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    // observe keyboard hide and show notifications to resize the text view appropriately
+- (void)viewDidAppear:(BOOL)animated
+{
+    // subscribe to notifications for keyboard being shown or hidden
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -79,8 +80,9 @@ ArtikelTableViewController * wordTableController = nil;
                                                object:nil];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    
+- (void)viewDidDisappear:(BOOL)animated
+{
+    // unsubscribe from notifications for keyboard being shown or hidden
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillChangeFrameNotification
                                                   object:nil];
@@ -92,7 +94,6 @@ ArtikelTableViewController * wordTableController = nil;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -110,28 +111,25 @@ ArtikelTableViewController * wordTableController = nil;
     UIViewAnimationCurve animationCurve = [info[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
     UIViewAnimationOptions animationOptions = UIViewAnimationOptionBeginFromCurrentState;
     
+    // not sure what this does
     animationOptions |= animationCurve << 16;
     
-    if (showKeyboard) {
-        UIInterfaceOrientation orientation = self.interfaceOrientation;
-        BOOL isPortrait = UIDeviceOrientationIsPortrait(orientation);
-        
+    if (showKeyboard)
+    {
         NSValue *keyboardFrameVal = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
         CGRect keyboardFrame = [keyboardFrameVal CGRectValue];
-        CGFloat height = isPortrait ? keyboardFrame.size.height : keyboardFrame.size.width;
+        CGFloat height = keyboardFrame.size.height;
         
         // adjust the constraint constant to include the keyboard's height
         self.constraintToAdjust.constant += height;
     }
-    else {
+    else
+    {
         self.constraintToAdjust.constant = 0;
     }
     
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView animateWithDuration:animationDuration delay:0 options:animationOptions animations:^{
-        [self.view layoutIfNeeded];
-    } completion:nil];
+    [UIView animateWithDuration:animationDuration delay:0 options:animationOptions animations:^{[self.view layoutIfNeeded];} completion:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification

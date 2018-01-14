@@ -29,7 +29,6 @@
 - (void)testArtikelWordNormalChars;
 - (void)testArtikelWordNumericalChars;
 - (void)testArtikelWordSpecialChars;
-- (void)testArtikelWordRepeatedSequencesAndSpaces;
 - (void)testArtikelNullCases;
 
 @end
@@ -81,6 +80,8 @@
     NSString * test_article = @"die";
     NSString * test_characters = @"Katze";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -108,6 +109,8 @@
     test_article = @"die";
     test_characters = @"katze";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -135,6 +138,8 @@
     test_article = @" die";
     test_characters = @"Katze";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -162,6 +167,8 @@
     test_article = @"die";
     test_characters = @"Katze ";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -189,6 +196,8 @@
     test_article = @" die";
     test_characters = @"katze";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
     }
@@ -215,6 +224,8 @@
     test_article = @"die";
     test_characters = @"katze ";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -242,6 +253,8 @@
     test_article = @"die";
     test_characters = @"KATZE";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -269,6 +282,8 @@
     test_article = @"DIE";
     test_characters = @"Katze";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -296,6 +311,8 @@
     test_article = @"DIE";
     test_characters = @"katze";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -323,6 +340,8 @@
     test_article = @"die";
     test_characters = @"KaTzE";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -350,6 +369,8 @@
     test_article = @"die";
     test_characters = @"kAtZe";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -377,6 +398,8 @@
     test_article = @"DIE";
     test_characters = @"KaTzE";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -404,6 +427,8 @@
     test_article = @"DIE";
     test_characters = @"kAtZe";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
 
@@ -730,10 +755,9 @@
     NSString * test_string = @"die Tür";
     word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNotNil(word);
-
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
-
     }
     
     if (![word.characters isEqualToString:@"Tür"]) {
@@ -744,9 +768,10 @@
     NSString * test_article = @"die";
     NSString * test_characters = @"Tür";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
-        
     }
     
     if (![word.characters isEqualToString:@"Tür"]) {
@@ -760,7 +785,6 @@
     
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
-
     }
     
     if (![word.characters isEqualToString:@"Tür"]) {
@@ -771,9 +795,10 @@
     test_article = @"die";
     test_characters = @"tür";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
-        
     }
     
     if (![word.characters isEqualToString:@"Tür"]) {
@@ -787,7 +812,6 @@
     
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
-
     }
     
     if (![word.characters isEqualToString:@"Tür"]) {
@@ -798,6 +822,8 @@
     test_article = @"die";
     test_characters = @"TÜR";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -825,6 +851,8 @@
     test_article = @"DIE";
     test_characters = @"Tür";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -852,6 +880,8 @@
     test_article = @"DIE";
     test_characters = @"tür";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -879,6 +909,8 @@
     test_article = @"die";
     test_characters = @"TüR";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -906,6 +938,8 @@
     test_article = @"die";
     test_characters = @"tüR";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -933,6 +967,8 @@
     test_article = @"die";
     test_characters = @"tÜr";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -960,6 +996,8 @@
     test_article = @"DiE";
     test_characters = @"TüR";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -987,6 +1025,8 @@
     test_article = @"diE";
     test_characters = @"tüR";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -1014,6 +1054,8 @@
     test_article = @"dIe";
     test_characters = @"tÜr";
     word = [ArtikelWord wordWithArticleAndCharacters:test_article characters:test_characters context:self.managedObjectContext];
+    XCTAssertNotNil(word);
+    
     if (![word.article isEqualToString:@"die"]) {
         XCTFail(@"%@ did not result in die as the article, instead resulted in %@", test_string, word.article);
         
@@ -1077,49 +1119,6 @@
     
     word = nil;
     word = [ArtikelWord wordWithString:@"$%#" context:self.managedObjectContext];
-    XCTAssertNil(word);
-}
-
-- (void)testArtikelWordRepeatedSequencesAndSpaces
-{
-    ArtikelWord * word = nil;
-    NSString * test_string = @"die die Katze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"die Katze Katze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"die K atze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"die Ka tze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"die Kat ze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"die Katz e";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"d ie Katze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
-    XCTAssertNil(word);
-    
-    word = nil;
-    test_string = @"di e Katze";
-    word = [ArtikelWord wordWithString:test_string context:self.managedObjectContext];
     XCTAssertNil(word);
 }
 
