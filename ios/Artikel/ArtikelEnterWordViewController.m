@@ -67,15 +67,25 @@ ArtikelTableViewController * wordTableController = nil;
 - (void)viewDidAppear:(BOOL)animated
 {
     // subscribe to notifications for keyboard being shown or hidden
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     // unsubscribe from notifications for keyboard being shown or hidden
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillChangeFrameNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,20 +127,26 @@ ArtikelTableViewController * wordTableController = nil;
     }
     
     NSTimeInterval animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    [UIView animateWithDuration:animationDuration delay:0 options:animationOptions animations:^{[self.view layoutIfNeeded];} completion:nil];
+    [UIView animateWithDuration:animationDuration delay:0
+                        options:animationOptions
+                     animations:^{[self.view layoutIfNeeded];}
+                     completion:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
 {
     NSDictionary *userInfo = [notification userInfo];
-    [self adjustConstraintByKeyboardState:YES keyboardInfo:userInfo];
+    [self adjustConstraintByKeyboardState:YES
+                             keyboardInfo:userInfo];
+    
     [wordTableController realignTableView];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
     NSDictionary *userInfo = [notification userInfo];
-    [self adjustConstraintByKeyboardState:NO keyboardInfo:userInfo];
+    [self adjustConstraintByKeyboardState:NO
+                             keyboardInfo:userInfo];
 }
 
 #pragma mark - Artikel related
@@ -149,7 +165,10 @@ ArtikelTableViewController * wordTableController = nil;
         if(!word)
         {
             // do not clear the text field, and show that the word is invalid
-            [ArtikelAnimationController DoShake:self.wordField.layer offset:5.0 duration:0.35 delegate:self];
+            [ArtikelAnimationController DoShake:self.wordField.layer
+                                         offset:5.0
+                                       duration:0.35
+                                       delegate:self];
         }
         else
         {

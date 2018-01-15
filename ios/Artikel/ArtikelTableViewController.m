@@ -108,7 +108,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
            atIndex:(NSUInteger)sectionIndex
      forChangeType:(NSFetchedResultsChangeType)type
 {
-    switch(type) {
+    switch(type)
+    {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
                           withRowAnimation:UITableViewRowAnimationFade];
@@ -133,7 +134,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 {
     UITableView *tableView = self.tableView;
     
-    switch(type) {
+    switch(type)
+    {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
