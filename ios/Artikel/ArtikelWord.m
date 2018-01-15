@@ -47,12 +47,12 @@
     ArtikelWord * word = nil;
     NSError * error = nil;
     NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"^\\b([d]([e][r]|[i][e]|[a][s])) (?u)([a-z]|[ß]|[ü]|[ä]|[ö])([a-z]|[ß]|[ü]|[ä]|[ö]|[-]|[ ])+$\\b"
-                                   options:NSRegularExpressionCaseInsensitive
-                                   error: &error];
+                                                                            options:NSRegularExpressionCaseInsensitive
+                                                                              error:&error];
     
     NSUInteger regex_matches = [regex numberOfMatchesInString:trimmed_string
-                                options:0
-                                range:NSMakeRange(0, [trimmed_string length])];
+                                                      options:0
+                                                        range:NSMakeRange(0, [trimmed_string length])];
     
     if(regex_matches == 1)
     {

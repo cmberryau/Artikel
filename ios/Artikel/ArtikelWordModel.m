@@ -32,7 +32,8 @@
     _managedObjectContext = context;
     
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     
     [fetch_request setEntity:entity_description];
     
@@ -53,7 +54,8 @@
     if(_fetchedResultsController == nil)
     {
         NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-        NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+        NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                               inManagedObjectContext:_managedObjectContext];
         
         [fetch_request setEntity:entity_description];
         
@@ -62,7 +64,10 @@
         
         [fetch_request setSortDescriptors:sort_descriptors_array];
         
-        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetch_request managedObjectContext:_managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetch_request
+                                                                        managedObjectContext:_managedObjectContext
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
         
         NSError * error;
         BOOL success = [_fetchedResultsController performFetch:&error];
@@ -129,7 +134,8 @@
     }
     
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     
     [fetch_request setEntity:entity_description];
     
@@ -138,7 +144,8 @@
     [fetch_request setPredicate:search_predicate];
     
     NSError * error;
-    NSUInteger count = [_managedObjectContext countForFetchRequest:fetch_request error:&error];
+    NSUInteger count = [_managedObjectContext countForFetchRequest:fetch_request
+                                                             error:&error];
     
     if(count > 0)
     {
@@ -151,7 +158,8 @@
 // Adds a word to the model and returns the newly created object
 -(ArtikelWord *) addWord:(NSString *) whole_word
 {
-    ArtikelWord * word = [ArtikelWord wordWithString:whole_word context:_managedObjectContext];
+    ArtikelWord * word = [ArtikelWord wordWithString:whole_word
+                                             context:_managedObjectContext];
     
     NSError * error;
     [_managedObjectContext save:&error];
@@ -162,7 +170,9 @@
 -(ArtikelWord *) addWord:(NSString *) article
               characters:(NSString *)characters
 {
-    ArtikelWord * word = [ArtikelWord wordWithArticleAndCharacters:article characters:characters context:_managedObjectContext];
+    ArtikelWord * word = [ArtikelWord wordWithArticleAndCharacters:article
+                                                        characters:characters
+                                                           context:_managedObjectContext];
     
     NSError * error;
     [_managedObjectContext save:&error];
@@ -184,7 +194,8 @@
     }
     
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     
     [fetch_request setEntity:entity_description];
     
@@ -193,7 +204,8 @@
     [fetch_request setPredicate:search_predicate];
     
     NSError * error;
-    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
+    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request
+                                                             error:&error];
     ArtikelWord * match = nil;
     
     // only one object returned, this is how it should be
@@ -257,7 +269,8 @@
 -(ArtikelWord *) fetchRecentlyAddedWord
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     [fetch_request setEntity:entity_description];
     
     // words that have not been attempted yet, or have no last attempted date
@@ -268,7 +281,8 @@
     [fetch_request setFetchLimit:3];
     
     NSError * error;
-    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
+    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request
+                                                             error:&error];
     
     if([objects count] > 0)
     {
@@ -283,7 +297,8 @@
 -(ArtikelWord *) fetchDifficultWord:(BOOL) with_time_limit
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     [fetch_request setEntity:entity_description];
 
     
@@ -303,7 +318,8 @@
     [fetch_request setFetchLimit:3];
     
     NSError * error;
-    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
+    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request
+                                                             error:&error];
     
     ArtikelWord * match;
     
@@ -320,7 +336,8 @@
 -(ArtikelWord *) fetchRarelyAttemptedWord:(BOOL) with_time_limit
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     [fetch_request setEntity:entity_description];
     
     if(with_time_limit)
@@ -339,7 +356,8 @@
     [fetch_request setFetchLimit:3];
     
     NSError * error;
-    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request error:&error];
+    NSArray * objects = [_managedObjectContext executeFetchRequest:fetch_request
+                                                             error:&error];
     
     ArtikelWord * match;
     
@@ -374,7 +392,8 @@
 -(NSUInteger) count
 {
     NSFetchRequest * fetch_request = [[NSFetchRequest alloc] init];
-    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription * entity_description = [NSEntityDescription entityForName:@"Word"
+                                                           inManagedObjectContext:_managedObjectContext];
     
     [fetch_request setEntity:entity_description];
     

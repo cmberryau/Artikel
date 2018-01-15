@@ -46,10 +46,9 @@ static volatile bool _ready_to_answer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self setArticleSelectorFontSize:20];
     
-    _label_movement_offset = (self.articleLabel.bounds.size.width/2);
+    _label_movement_offset = (self.articleLabel.bounds.size.width / 2);
     _ready_to_answer = true;
 }
 
@@ -74,9 +73,7 @@ static volatile bool _ready_to_answer;
     if(!_ready_to_answer)
         return;
     
-    NSString * article = [self.articleSelector
-                          titleForSegmentAtIndex:[self.articleSelector selectedSegmentIndex]];
-    
+    NSString * article = [self.articleSelector titleForSegmentAtIndex:[self.articleSelector selectedSegmentIndex]];
     ArtikelWord * word = [self.model current];
     
     // is article correct?
@@ -87,15 +84,17 @@ static volatile bool _ready_to_answer;
         [self.articleLabel setHidden:false];
         
         // fade in the article label using opacity
-        [ArtikelAnimationController DoFadeIn:[self.articleLabel layer] duration:0.5 delegate:self];
+        [ArtikelAnimationController DoFadeIn:[self.articleLabel layer]
+                                    duration:0.5
+                                    delegate:self];
         
         // move both article and word labels into middle of view
         [ArtikelAnimationController DoMove:[self.wordLabel layer]
-                                              xmove:_label_movement_offset
-                                              ymove:0 duration:0.25 delegate:self];
+                                     xmove:_label_movement_offset
+                                     ymove:0 duration:0.25 delegate:self];
         [ArtikelAnimationController DoMove:[self.articleLabel layer]
-                                              xmove:_label_movement_offset
-                                              ymove:0 duration:0.25 delegate:self];
+                                     xmove:_label_movement_offset
+                                     ymove:0 duration:0.25 delegate:self];
         
         // start delay timer before resetting state
         [NSTimer scheduledTimerWithTimeInterval:1.25
