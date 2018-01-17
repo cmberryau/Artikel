@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) NSString * article;
 @property (nonatomic, strong) NSString * characters;
+@property (nonatomic, strong) NSString * section_key;
 @property (nonatomic, strong) NSNumber * times_attempted;
 @property (nonatomic, strong) NSNumber * times_failed;
 @property (nonatomic, strong) NSNumber * fail_rate;

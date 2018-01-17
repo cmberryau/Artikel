@@ -89,6 +89,11 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     }
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return[NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", @"Ä", @"Ö", @"Ü", nil];
+}
+
 #pragma mark Fetched results controller related
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
@@ -99,7 +104,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
-    
     [self realignTableView];
 }
 

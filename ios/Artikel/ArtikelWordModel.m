@@ -66,7 +66,7 @@
         
         _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetch_request
                                                                         managedObjectContext:_managedObjectContext
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:@"section_key"
                                                                                    cacheName:nil];
         
         NSError * error;

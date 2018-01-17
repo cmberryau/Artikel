@@ -24,6 +24,7 @@
 
 @dynamic article;
 @dynamic characters;
+@dynamic section_key;
 @dynamic times_attempted;
 @dynamic times_failed;
 @dynamic fail_rate;
@@ -77,6 +78,8 @@
         word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:context];
         [word setArticle: [[strings objectAtIndex:0] lowercaseString]];
         [word setCharacters:characters];
+        unichar section_key = [characters characterAtIndex:0];
+        [word setSection_key:[NSString stringWithCharacters:&section_key length:1]];
         [word setTimes_attempted:0];
         [word setTimes_failed:0];
         [word setFail_rate:0];
